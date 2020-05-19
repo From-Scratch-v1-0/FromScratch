@@ -1,0 +1,72 @@
+﻿@model SignUpVM
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/Layouts/_AuthLayout.cshtml";
+}
+
+    <div class="middle ">
+        <div class="leftSection column">
+            <section class="infoText">
+            </section>
+        </div>
+        <div class="righSection column">
+            <div class="Registration">
+                <div class="form">
+                    <div class="tab-content">
+                        <div id="signup">
+                            <h1>Get Started</h1>
+                            <form asp-action="SignUp" asp-controller="Auth" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="field-wrap">
+                                    <input asp-for="UserName" type="text" required autocomplete="off" placeholder="Username" />
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
+                                </div>
+                                <div class="field-wrap">
+                                    <input asp-for="Email" type="email" required autocomplete="off" placeholder="Email" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="field-wrap">
+                                    <input asp-for="Password" type="password" id="myInput1" required autocomplete="off" placeholder="Password" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                    @*<input type="radio" onclick="myFunction()" class="show" name="radio">*@
+                                </div>
+                                <div class="field-wrap">
+                                    <input asp-for="ReEntPassword" type="password" id="myInput2" required autocomplete="off" placeholder="Re-Enter Password" />
+                                    <span asp-validation-for="ReEntPassword" class="text-danger"></span>
+                                    @*<input type="radio" onclick="myFunction()" class="show" name="radio">*@
+                                </div>
+                                <div class="bot-row">
+                                    <div class="field-wrap">
+                                        <label>
+                                            By clicking Sign Up, you agree to our <a href="#" tabIndex="-1">Terms</a>,
+                                            <a href="#" tabIndex="-1">Data Policy</a> and <a href="#"
+                                                                                             tabIndex="-1">
+                                                Cookies
+                                                Policy
+                                            </a> .
+                                            You may receive SMS Notifications from us and can opt out any time.
+                                        </label>
+                                    </div>
+                                    <div class="field-wrap">
+                                        <button type="submit" class="button button-block" >Sign up</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <br />
+                            <div class="Circlecontainer">
+                                <div class="circle">
+                                </div>
+                            </div>
+                            <div class="websites">
+                                <a href="#" class="BottomA"><img src="~/images/facebooklogo.png" class="websiteicons"></a>
+                                <a href="#" class="BottomA"><img src="~/images/googleiconcolored.png" class="websiteicons"></a>
+                                <a href="#" class="BottomA"><img src="~/images/Linkediniconblue.png" class="websiteicons"></a>
+                                <a href="#" class="BottomA"><img src="~/images/githubnew.png" class="websiteicons"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
