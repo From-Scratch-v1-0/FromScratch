@@ -3,70 +3,98 @@
     ViewBag.Title = "Welcome";
     Layout = "~/Views/Shared/Layouts/_AuthLayout.cshtml";
 }
+<body ng-app="myApp" ng-controller="validateCtrl">
+        <div class="middle ">
+            <div class="leftSection column">
+                <section class="infoText">
+                </section>
+            </div>
+            <div class="righSection column">
+                <div class="Registration">
+                    <div class="form">
+                        <div class="tab-content">
+                            <div id="signup">
 
-    <div class="middle ">
-        <div class="leftSection column">
-            <section class="infoText">
-            </section>
-        </div>
-        <div class="righSection column">
-            <div class="Registration">
-                <div class="form">
-                    <div class="tab-content">
-                        <div id="signup">
-                            <h1>Get Started</h1>
-                            <form asp-action="SignUp" asp-controller="Auth" method="post">
-                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                <div class="field-wrap">
-                                    <input asp-for="UserName" type="text" required autocomplete="off" placeholder="Username" />
-                                    <span asp-validation-for="UserName" class="text-danger"></span>
-                                </div>
-                                <div class="field-wrap">
-                                    <input asp-for="Email" type="email" required autocomplete="off" placeholder="Email" />
-                                    <span asp-validation-for="Email" class="text-danger"></span>
-                                </div>
-                                <div class="field-wrap">
-                                    <input asp-for="Password" type="password" id="myInput1" required autocomplete="off" placeholder="Password" />
-                                    <span asp-validation-for="Password" class="text-danger"></span>
-                                    @*<input type="radio" onclick="myFunction()" class="show" name="radio">*@
-                                </div>
-                                <div class="field-wrap">
-                                    <input asp-for="ReEntPassword" type="password" id="myInput2" required autocomplete="off" placeholder="Re-Enter Password" />
-                                    <span asp-validation-for="ReEntPassword" class="text-danger"></span>
-                                    @*<input type="radio" onclick="myFunction()" class="show" name="radio">*@
-                                </div>
-                                <div class="bot-row">
+                                <h1>Get Started</h1>
+
+                                <form asp-action="SignUp" asp-controller="Auth" method="post"
+                                      ng-app="myApp" ng-controller="validateCtrl" role="form"
+                                      name="myForm" novalidate>
+
                                     <div class="field-wrap">
-                                        <label>
-                                            By clicking Sign Up, you agree to our <a href="#" tabIndex="-1">Terms</a>,
-                                            <a href="#" tabIndex="-1">Data Policy</a> and <a href="#"
-                                                                                             tabIndex="-1">
-                                                Cookies
-                                                Policy
-                                            </a> .
-                                            You may receive SMS Notifications from us and can opt out any time.
-                                        </label>
+                                        <input asp-for="UserName" type="text" required autocomplete="off" placeholder="Username"
+                                               name="user" ng-model="user" />
+                                        <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+                                            <span ng-show="myForm.user.$error.required"><br />Username is required</span>
+                                        </span>
                                     </div>
                                     <div class="field-wrap">
-                                        <button type="submit" class="button button-block" >Sign up</button>
+                                        <input asp-for="Email" type="email" required autocomplete="off" placeholder="Email"
+                                               name="email" ng-model="email" />
+                                        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                                            <span ng-show="myForm.email.$error.required"><br />Email is required</span>
+                                            <span ng-show="myForm.email.$error.email"><br />Invalid email address</span>
+                                        </span>
+                                    </div>
+
+                                    <div class="field-wrap" ng-class="{'has-error':!myForm.password.$valid}">
+                                        <input asp-for="Password" type="password" id="myInput1" required autocomplete="off" placeholder="Password"
+                                               name="password" ng-model="password" ng-minlength="8" />
+                                        <span style="color:red" ng-show="myForm.password.$invalid && myForm.password.$touched">
+                                            <br />Password should contain atleast 8 characters.
+                                        </span>
+                                        <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+                                            <span ng-show="myForm.password.$error.required"><br />Password is Required</span>
+                                        </span>
+
+                                        @*<input type="radio" onclick="myFunction()" class="show" name="radio">*@
+                                    </div>
+
+                                    <div class="field-wrap" ng-class="{'has-error':!myForm.repassword$valid}">
+                                        <input asp-for="ReEntPassword" type="password" id="myInput2" required autocomplete="off" placeholder="Re-Enter Password"
+                                               name="repassword" ng-model="repassword" match-target="password" />
+                                        <span style="color:red" ng-show="myForm.repassword.$dirty && myForm.repassword.$invalid">
+                                            <span ng-show="myForm.repassword.$error.required"><br />Password is Required</span>
+                                            <span ng-show="myForm.repassowrd.$error.match">
+                                                <br />Passwords don't match
+                                            </span>
+                                        </span>
+                                        @*<input type="radio" onclick="myFunction()" class="show" name="radio">*@
+                                    </div>
+                                    <div class="bot-row">
+                                        <div class="field-wrap">
+                                            <label>
+                                                By clicking Sign Up, you agree to our <a href="#" tabIndex="-1">Terms</a>,
+                                                <a href="#" tabIndex="-1">Data Policy</a> and <a href="#"
+                                                                                                 tabIndex="-1">
+                                                    Cookies
+                                                    Policy
+                                                </a> .
+                                                You may receive SMS Notifications from us and can opt out any time.
+                                            </label>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="submit" class="button button-block" value="Sign up" ng-disabled="myForm.$invalid"
+                                                   @*ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||
+                                                            myForm.email.$dirty && myForm.email.$invalid"*@ />
+                                        </div>
+                                    </div>
+                                </form>
+                                <br />
+                                <div class="Circlecontainer">
+                                    <div class="circle">
                                     </div>
                                 </div>
-                            </form>
-                            <br />
-                            <div class="Circlecontainer">
-                                <div class="circle">
+                                <div class="websites">
+                                    <a href="#" class="BottomA"><img src="~/images/facebooklogo.png" class="websiteicons"></a>
+                                    <a href="#" class="BottomA"><img src="~/images/googleiconcolored.png" class="websiteicons"></a>
+                                    <a href="#" class="BottomA"><img src="~/images/Linkediniconblue.png" class="websiteicons"></a>
+                                    <a href="#" class="BottomA"><img src="~/images/githubnew.png" class="websiteicons"></a>
                                 </div>
-                            </div>
-                            <div class="websites">
-                                <a href="#" class="BottomA"><img src="~/images/facebooklogo.png" class="websiteicons"></a>
-                                <a href="#" class="BottomA"><img src="~/images/googleiconcolored.png" class="websiteicons"></a>
-                                <a href="#" class="BottomA"><img src="~/images/Linkediniconblue.png" class="websiteicons"></a>
-                                <a href="#" class="BottomA"><img src="~/images/githubnew.png" class="websiteicons"></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
+</body>
