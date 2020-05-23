@@ -28,6 +28,7 @@ body {
         font-size: 17px;
         outline: none;
         position: relative;
+        font-family: "Nunito";
     }
 
         .header a:not(:first-child):hover {
@@ -376,6 +377,7 @@ label a {
     border: none;
 }
 
+
 @font-face {
     font-family: "DancingScript";
     src: url("Fonts/DancingScript-VariableFont_wght.ttf");
@@ -385,7 +387,22 @@ label a {
     font-family: "Tajawal";
     src: url("Fonts/Tajawal-Regular.ttf");
 }
-
+@font-face{
+    font-family:"Squada";
+    src:url("../fonts/Squada_One/SquadaOne-Regular.ttf");
+}
+@font-face {
+    font-family: "Baloo";
+    src: url("../fonts/Baloo_Chettan_2/BalooChettan2-Regular.ttf");
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("../fonts/Merriweather/Merriweather-Regular.ttf");
+}
+@font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito_Sans/NunitoSans-SemiBold.ttf");
+}
 @media screen and (max-width: 1024px) {
     .header input,
     .header .login-container button {
@@ -412,7 +429,6 @@ label a {
 
     .header a {
         float: left;
-        font-size: 12px;
         padding-bottom: 10px;
     }
 
@@ -427,6 +443,7 @@ label a {
         float: none !important;
         margin-bottom: 10px !important;
         margin-top: -5px !important;
+        font-size:12px !important;
     }
 
     .headerleftside {
