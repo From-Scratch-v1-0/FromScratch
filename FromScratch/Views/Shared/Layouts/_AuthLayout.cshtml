@@ -1,7 +1,5 @@
 ﻿
-
 <!DOCTYPE html>
-@model LogInVM
 <html>
 <head>
 
@@ -12,27 +10,6 @@
 </head>
 <body>
 
-    <!--NavBar-->
-    <div class="header container">
-        <div class="headerleftside">
-            <a href="#"><img src="~/images/owlicon - Copy.png" class="img-fluid"></a>
-            <a href="#" class="underline" tabIndex="-1">Contacts</a>
-            <a href="#" class="underline" tabIndex="-1">About us</a>
-        </div>
-        <div class="login-container">
-            <div class="login-container-div">
-                <form asp-controller="auth" asp-action="login" method="post">
-                    <input asp-for="UserName" type="text" placeholder="Username" class="loginInput">
-                    <input asp-for="Password" type="password" placeholder="Password" class="loginInput">
-                    <button type="submit" class="loginBtn">Login</button>
-                    <br />
-                    <input type="text" placeholder="Username" name="Username" class="loginInput-last">
-                    <a href="#" class="RecoveryBtn" tabIndex="-1">Forgot password?</a>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!--End NavBar-->
 
     @RenderBody()
 
