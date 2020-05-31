@@ -30,7 +30,7 @@ namespace FromScratch.Controllers
         public string TempPlace() 
         {
 
-            return "Success"; 
+            return "Success!"; 
         }
 
         [HttpPost]
@@ -50,25 +50,25 @@ namespace FromScratch.Controllers
                         }
                         else
                         {
-                            ModelState.AddModelError("", "Invalid Password entered");
+                            ModelState.AddModelError("", "Invalid Password entered!");
                             return View(newUser);
                         }
                     }
 
-                    ModelState.AddModelError("", "Invalid login attempt");
+                    ModelState.AddModelError("", "Invalid Username!");
                     return View(newUser);
                 }
                 else
                 {
                     if (_userRepository.ExistUsername(newUser.Signup.UserName))
                     {
-                        ModelState.AddModelError("Signup.UserName", "This Username Alredy Exist");
+                        ModelState.AddModelError("Signup.UserName", "This Username Alredy Exists!");
                         return View(newUser);
                     }
 
                     if (_userRepository.ExistEmail(newUser.Signup.Email))
                     {
-                        ModelState.AddModelError("Signup.Email", "This Eamail Alredy Exist");
+                        ModelState.AddModelError("Signup.Email", "This Email Alredy Exists!");
                         return View(newUser);
                     }
 
