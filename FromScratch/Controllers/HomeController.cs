@@ -17,7 +17,7 @@ namespace FromScratch.Controllers
         {
             _logger = logger;
         }
-
+        // Home/Index (Test comment)
         public IActionResult Index()
         {
             return View();

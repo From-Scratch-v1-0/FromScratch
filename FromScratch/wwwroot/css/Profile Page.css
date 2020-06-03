@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.container {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.topnav {
+  background-color: #6610f2;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-left: auto;
+  padding-right: auto;
+}
+.icon {
+  margin: 10px 0px !important;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.topnav-left a {
+  color: white;
+  text-decoration: none;
+  float: left;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+.topnav-left a:hover {
+  color: #f2aa10;
+}
+.topnav-left a:first-child {
+  padding-bottom: 0px;
+  user-select: none;
+}
+.topnav-left a:not(:first-child) {
+  padding: 35px 10px;
+}
+.topnav-right a {
+  float: right;
+  padding: 10px;
+  border: 1px solid #707070;
+  border-radius: 50%;
+  overflow-x: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  color: #007bff;
+  background-color: white;
+}
+.topnav-right a:first-child {
+  margin-top: 5px;
+  max-height: 100%;
+  user-select: none;
+}
+.topnav-right a:not(:first-child) {
+  margin: 24px 10px;
+}
+.row {
+  width: 100%;
+}
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.middleColumn-left {
+  width: 35%;
+  float: left;
+  height: 800px;
+  overflow: hidden;
+}
+.middleColumn-right {
+  width: 65%;
+  float: left;
+  height: 800px;
+  overflow: hidden;
+}
+.img {
+  border: 1px solid #707070;
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0px 5px 10px #707070;
+  padding: 5px;
+}
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  color: #707070;
+}
+.userInfo {
+  color: #707070;
+  font-size: 15px;
+}
+.aboutUser {
+  border-top: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+}
+.userInfo label {
+  color: #007bff;
+}
+.aboutMe {
+  border: 1px solid #707070;
+  padding: 20px 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 200px;
+}
+.mySkills,
+.myProjects {
+  min-height: 100px;
+  overflow: hidden;
+}
+.mySkills a,
+.myProjects a {
+  border: 1px solid #707070;
+  padding: 5px 15px;
+  float: left;
+  display: block;
+  margin: 2px 2px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #007bff;
+  text-transform: capitalize;
+  text-align: center;
+}
+.mySkills a:hover,
+.myProjects a:hover {
+  border: 1px solid #007bff;
+}
+.footer {
+  text-align: center;
+  clear: both;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 5%;
+  background-color: #343a40;
+  color: white;
+}
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+.dropbtn {
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 88px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #707070;
+  padding: 12px 16px;
+  text-decoration: none;
+  float: unset;
+  padding: unset;
+  display: block;
+  border-radius: unset;
+  border: none;
+  margin-top: 0px;
+  margin: 0 !important;
+  padding: 10px 10px;
+  text-align: center;
+}
+.dropdown-content a:hover {
+  color: #007bff;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.show {
+  display: block;
+}
+@media screen and (max-width: 800px) {
+  .middleColumn-left,
+  .middleColumn-right {
+    width: 100%;
+    float: none;
+    display: block;
+  }
+  .column {
+    float: none;
+    width: 100%;
+    display: block;
+  }
+  .topnav-left-right {
+    display: unset;
+  }
+  .middleColumn-left,
+  .middleColumn-right {
+    height: unset;
+  }
+}
+@media screen and (max-width:400px){
+  .dropdown-content{
+    top:177px;
+  }
+}
+

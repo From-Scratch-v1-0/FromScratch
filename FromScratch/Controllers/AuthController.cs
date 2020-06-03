@@ -27,59 +27,67 @@ namespace FromScratch.Controllers
 
         // sanam axali gverdi gveqneba manamde sacdelad gadamisamarteba
         // Login-is mere moxdeba aq!
-        public string TempPlace(LogInVM user) 
+        public string TempPlace() 
         {
-            return user.UserName.ToString(); 
+
+            return "Success!"; 
         }
 
         [HttpPost]
-        public IActionResult LogIn(LogInVM currentUser) 
-        {
-            if (_userRepository.ExistUsername(currentUser.UserName)) 
-            {
-                var userPass = _userRepository.PasswordVerification(currentUser.UserName,currentUser.Password);
-
-                if (userPass)
-                    return RedirectToAction("TempPlace",currentUser);
-
-            }
-
-            ModelState.AddModelError("", "Invalid login attempt");
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        public IActionResult SignUp(SignUpVM newUser) 
+        public IActionResult Index(AutorisationVM newUser) 
         {
             if (ModelState.IsValid) 
             {
-                if (_userRepository.ExistUsername(newUser.UserName)) 
+                if(newUser.Login != null)
                 {
-                    ModelState.AddModelError("", "This Username Alredy Exist");
-                    return RedirectToAction("Index",newUser);
+                    if (_userRepository.ExistUsername(newUser.Login.UserName))
+                    {
+                        var userPass = _userRepository.PasswordVerification(newUser.Login.UserName, newUser.Login.Password);
+
+                        if (userPass)
+                        {
+                            return RedirectToAction("TempPlace");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Invalid Password entered!");
+                            return View(newUser);
+                        }
+                    }
+
+                    ModelState.AddModelError("", "Invalid Username!");
+                    return View(newUser);
                 }
-
-                if (_userRepository.ExistUsername(newUser.Email))
+                else
                 {
-                    ModelState.AddModelError("", "This Eamail Alredy Exist");
-                    return RedirectToAction("Index", newUser);
+                    if (_userRepository.ExistUsername(newUser.Signup.UserName))
+                    {
+                        ModelState.AddModelError("Signup.UserName", "This Username Alredy Exists!");
+                        return View(newUser);
+                    }
+
+                    if (_userRepository.ExistEmail(newUser.Signup.Email))
+                    {
+                        ModelState.AddModelError("Signup.Email", "This Email Alredy Exists!");
+                        return View(newUser);
+                    }
+
+                    User user = new User
+                    {
+                        UserName = newUser.Signup.UserName,
+                        Email = newUser.Signup.Email,
+                        Password = newUser.Signup.Password,
+                        CreateDate = DateTime.Today,
+                        Rating = 0,
+                        UserTypeKey = 1
+                    };
+
+                    _userRepository.AddUser(user);
+                    return View();
                 }
-
-                User user = new User
-                {
-                    UserName = newUser.UserName,
-                    Email = newUser.Email,
-                    Password = newUser.Password,
-                    CreateDate = DateTime.Today,
-                    Rating = 0,
-                    UserTypeKey = 1
-                };
-
-                _userRepository.AddUser(user);
-                return RedirectToAction("Index");
             }
 
-            return RedirectToAction("Index");
+            return View();
         }
 
     }
