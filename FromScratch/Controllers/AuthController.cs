@@ -7,6 +7,7 @@ using FromScratch.ViewModels;
 using FromScratch.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
+using FS_DAL.Entities;
 
 namespace FromScratch.Controllers
 {

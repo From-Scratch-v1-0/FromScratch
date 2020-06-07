@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Internal;
+﻿using FS_DAL.Context;
+using FS_DAL.Entities;
+using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +20,9 @@ namespace FromScratch.Models.Repositories
 
     public class UserRepository : IUserRepository
     {
-        private readonly DWContext _context;
+        private readonly FS_DWContext _context;
 
-        public UserRepository(DWContext context)
+        public UserRepository(FS_DWContext context)
         {
             _context = context;
         }

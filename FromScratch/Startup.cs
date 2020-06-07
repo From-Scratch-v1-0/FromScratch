@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using FS_DAL.Context;
 
 namespace FromScratch
 {
@@ -27,7 +28,7 @@ namespace FromScratch
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<DWContext>(options =>
+            services.AddDbContext<FS_DWContext> (options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DWConnectionString")));
             services.AddScoped<IUserRepository,UserRepository>();
         }
