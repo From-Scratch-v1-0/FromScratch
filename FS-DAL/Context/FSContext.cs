@@ -174,26 +174,6 @@ namespace FS_DAL.Context
                 entity.Property(e => e.StatusName).HasMaxLength(200);
             });
 
-            //modelBuilder.Entity<User>(entity =>
-            //{
-            //    //entity.HasKey(e => e.Id)
-            //    //    .HasName("PK__User__296ADCF14E90AAFB");
-
-            //    entity.ToTable("User", "hr");
-
-            //    entity.Property(e => e.CreateDate).HasColumnType("date");
-
-            //    //entity.Property(e => e.Email).HasMaxLength(100);
-
-            //    entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
-
-            //    //entity.Property(e => e.PasswordHash).HasMaxLength(100);
-
-            //    //entity.Property(e => e.UserName).HasMaxLength(100);
-
-                
-            //});
-
             modelBuilder.Entity<UserType>(entity =>
             {
                 entity.HasKey(e => e.UserTypeKey)

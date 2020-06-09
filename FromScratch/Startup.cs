@@ -14,7 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FS_DAL.Context;
 using FS_DAL.Entities;
-
+using Services.Repositories;
+using Services.Contracts;
 
 namespace FromScratch
 {
@@ -37,7 +38,7 @@ namespace FromScratch
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<FSContext>();
 
-            services.AddScoped<IUserRepository,UserRepository>();
+            services.AddScoped<IUOW,UOW>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

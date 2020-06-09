@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FS-DAL\FS-DAL.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
 </Project>
