@@ -22,6 +22,6 @@ namespace FromScratch.ViewModels
         public string Password { get; set; }
 
         [Compare("Password", ErrorMessage = "Passwords didn't match!")]
-        public string ReEntPassword { get; set; }
+        public string ConfirmPassword { get; set; }
     }
 }

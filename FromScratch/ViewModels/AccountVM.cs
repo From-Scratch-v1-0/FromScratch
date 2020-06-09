@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FromScratch.ViewModels
 {
-    public class AutorisationVM
+    public class AccountVM
     {
         public LogInVM Login { get; set; }
         public SignUpVM Signup { get; set; }
