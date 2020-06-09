@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FromScratch", "FromScratch\FromScratch.csproj", "{5C103B49-E822-4FB4-AC10-925B950A0284}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS-DAL", "..\..\..\Documents\GitHub\FS-DAL\FS-DAL\FS-DAL.csproj", "{FD219C43-1604-4910-A1CB-49D53FDCCB6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS-DAL", "FS-DAL\FS-DAL.csproj", "{FD219C43-1604-4910-A1CB-49D53FDCCB6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
