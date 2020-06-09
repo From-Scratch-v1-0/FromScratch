@@ -6,7 +6,7 @@ namespace FS_DAL.Entities
 {
     public partial class Person
     {
-        public int? UserKey { get; set; }
+        public string? UserKey { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }

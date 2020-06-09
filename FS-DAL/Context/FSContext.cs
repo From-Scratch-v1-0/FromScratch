@@ -1,4 +1,5 @@
 ﻿using FS_DAL.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
@@ -7,16 +8,12 @@ using System.Text;
 
 namespace FS_DAL.Context
 {
-    public class FS_DWContext : DbContext
+    public class FSContext : IdentityDbContext
     {
-        public FS_DWContext()
-        {
-                
-        }
 
-        public FS_DWContext(DbContextOptions<FS_DWContext> options) : base(options)
+        public FSContext(DbContextOptions options) : base(options)
         {
-                
+
         }
 
         public virtual DbSet<Country> Country { get; set; }
@@ -32,7 +29,7 @@ namespace FS_DAL.Context
         public virtual DbSet<UserType> UserType { get; set; }
 
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
@@ -177,28 +174,25 @@ namespace FS_DAL.Context
                 entity.Property(e => e.StatusName).HasMaxLength(200);
             });
 
-            modelBuilder.Entity<User>(entity =>
-            {
-                entity.HasKey(e => e.UserKey)
-                    .HasName("PK__User__296ADCF14E90AAFB");
+            //modelBuilder.Entity<User>(entity =>
+            //{
+            //    //entity.HasKey(e => e.Id)
+            //    //    .HasName("PK__User__296ADCF14E90AAFB");
 
-                entity.ToTable("User", "hr");
+            //    entity.ToTable("User", "hr");
 
-                entity.Property(e => e.CreateDate).HasColumnType("date");
+            //    entity.Property(e => e.CreateDate).HasColumnType("date");
 
-                entity.Property(e => e.Email).HasMaxLength(100);
+            //    //entity.Property(e => e.Email).HasMaxLength(100);
 
-                entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
+            //    entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.Password).HasMaxLength(100);
+            //    //entity.Property(e => e.PasswordHash).HasMaxLength(100);
 
-                entity.Property(e => e.UserName).HasMaxLength(100);
+            //    //entity.Property(e => e.UserName).HasMaxLength(100);
 
-                entity.HasOne(d => d.UserTypeKeyNavigation)
-                    .WithMany(p => p.User)
-                    .HasForeignKey(d => d.UserTypeKey)
-                    .HasConstraintName("FK__User__UserTypeKe__5AEE82B9");
-            });
+                
+            //});
 
             modelBuilder.Entity<UserType>(entity =>
             {
@@ -208,6 +202,11 @@ namespace FS_DAL.Context
                 entity.ToTable("UserType", "hr");
 
                 entity.Property(e => e.UserTypeName).HasMaxLength(100);
+
+                entity.HasMany(d => d.User)
+                    .WithOne(p => p.UserTypeKeyNavigation)
+                    .HasForeignKey(d => d.UserTypeKey)
+                    .HasConstraintName("FK__User__UserTypeKe__5AEE82B9");
             });
 
 

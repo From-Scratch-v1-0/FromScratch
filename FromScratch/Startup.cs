@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FromScratch.Models;
+using Microsoft.AspNetCore.Identity;
 using FromScratch.Models.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FS_DAL.Context;
+using FS_DAL.Entities;
+
 
 namespace FromScratch
 {
@@ -28,8 +31,12 @@ namespace FromScratch
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<FS_DWContext> (options =>
+            services.AddDbContext<FSContext> (options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DWConnectionString")));
+
+            services.AddIdentity<User, IdentityRole>()
+                    .AddEntityFrameworkStores<FSContext>();
+
             services.AddScoped<IUserRepository,UserRepository>();
         }
 

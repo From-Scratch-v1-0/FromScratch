@@ -20,9 +20,9 @@ namespace FromScratch.Models.Repositories
 
     public class UserRepository : IUserRepository
     {
-        private readonly FS_DWContext _context;
+        private readonly FSContext _context;
 
-        public UserRepository(FS_DWContext context)
+        public UserRepository(FSContext context)
         {
             _context = context;
         }
@@ -55,7 +55,7 @@ namespace FromScratch.Models.Repositories
 
         public bool PasswordVerification(string username, string password)
         {
-            var pass = _context.User.Where(u => u.UserName == username).Any(p => p.Password == password);
+            var pass = _context.User.Where(u => u.UserName == username).Any(p => p.PasswordHash == password);
             return pass;
         }
     }

@@ -77,7 +77,7 @@ namespace FromScratch.Controllers
                     {
                         UserName = newUser.Signup.UserName,
                         Email = newUser.Signup.Email,
-                        Password = newUser.Signup.Password,
+                        PasswordHash = newUser.Signup.Password,
                         CreateDate = DateTime.Today,
                         Rating = 0,
                         UserTypeKey = 1

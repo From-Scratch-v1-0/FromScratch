@@ -7,7 +7,7 @@ namespace FS_DAL.Entities
     public partial class Project
     {
         public int? ProjectKey { get; set; }
-        public int? UserKey { get; set; }
+        public string? UserKey { get; set; }
         public int? StartDateKey { get; set; }
         public int? StatusKey { get; set; }
 
