@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family:"MerriWeather";
+  background-color: rgb(243, 247, 247);;
+}
+
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+nav {
+  float: left;
+  width: 30%;
+  min-height: 300px;
+  height: 1000px;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: rgb(243, 247, 247);
+  height: 1000px;
+  
+}
+.articleBox{
+  padding:40px 20px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 10px  #707070;
+}
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;  
+}
+
+.containerTab {
+    padding: 100px 20px;
+    border: 1px solid #707070;
+    border-top: none;
+    box-shadow: 0px 0px 10px 0px #707070;
+}
+#b1{
+  border-radius: 0px 0px 20px 20px;
+  
+  
+}
+#b2{
+  border-radius: 00px 00px 20px 20px;
+}
+#b3{
+  border-radius: 0px 0px 20px 20px;
+}
+.a1{
+  border-radius: 20px 00px 0px 0px;
+  border:1px solid #707070;
+  border-bottom: none;
+}
+.a2{
+  border-top: 1px solid #707070;
+  
+}
+.a3{
+  border-radius: 0px 20px 0px 0px;
+  border: 1px solid #707070;
+  border-bottom: none;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Closable button inside the container tab */
+.closebtn {
+    float: right;
+    color: #707070;
+    font-size: 35px;
+    cursor: pointer;
+}
+.active{
+  background-color: rgb(243, 247, 247) !important;
+}
+.userComment{
+  border: 1px solid #707070;
+  padding:15px;
+  border-radius: 20px;
+  background-color: white;
+  overflow: hidden;
+  
+}
+.userLink{
+  display: inline-block;
+  border-radius: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+.ci{
+  cursor: pointer;
+  float: left;
+  display: block;
+}
+.name{
+  margin-top: 16px;
+  margin-left: 10px;
+}
+.userComment label{
+  
+}
+.commentIcon{
+  border: 1px solid #707070;
+  border-radius: 20px;
+  padding: 2px;
+  box-shadow: 0px 0px 5px #70707083;
+}
+.commentContext{
+  float:right;
+  margin-top: 16px;
+  margin-left: 10px;
+
+}
+textarea{
+  width: 100%;
+  resize: none;
+  border-radius: 20px;
+  padding:20px;
+  outline: none;
+}
+.commentBtn{
+  float: right;
+  border-radius: 20px;
+  outline: none;
+  border: 2px solid #007bff;
+  background-color: #007bff;
+  cursor: pointer;
+  color: white;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 16px;
+}
+.commentBtn:hover{
+  background-color: white;
+  color: #007bff;
+}
+nav a{
+  text-decoration: none;
+  float: right;
+  color: #007bff;
+}
+.invisible{
+  visibility: hidden;
+}
+.Coding{
+  height:600px;
+}
+table{
+  width: 100%;
+  border: 1px solid #707070;
+  border-spacing: 0;
+  box-shadow: 0px 0px 10px #707070;
+}
+tr:first-child{
+  background-color: #007bff;
+  color: white;
+}
+tr{
+  background-color: white;
+}
+th,td{
+  text-align: left;
+  padding: 16px;
+}
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+  nav,
+  article {
+    width: 100%;
+    height: auto;
+  }
+  .column{
+    padding: 20px 0px;
+    font-size: 16px;
+  }
+}
+@font-face {
+  font-family: "Squada_One";
+  src: url("../Fonts/Squada_One/SquadaOne-Regular.ttf");
+}
+@font-face {
+  font-family: "Baloo";
+  src: url("../Fonts/Baloo_Chettan_2/BalooChettan2-Regular.ttf");
+}
+@font-face {
+  font-family: "Nunito_sans";
+  src: url("../Fonts/Nunito_Sans/NunitoSans-SemiBold.ttf");
+}
+@font-face {
+  font-family: "MerriWeather";
+  src: url("../Fonts/Merriweather/Merriweather-Regular.ttf");
+}
+@font-face {
+  font-family: "Anton";
+  src: url("../Fonts/Anton/Anton-Regular.ttf");
+}

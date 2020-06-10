@@ -1,0 +1,169 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="~/css/insideProject.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+</head>
+
+<body>
+    <header>
+        <h2>Header</h2>
+    </header>
+
+    <section>
+        <article>
+            <div class="articleBox">
+
+
+                <h1>Project name</h1>
+                <div class="row">
+                    <div id="myDIV">
+                        <div class="column a1 btn active" onclick="openTab('b1');"
+                             style="background:rgba(204, 204, 204, 0.200);">
+                            Problem
+                        </div>
+                        <div class="column a2 btn" onclick="openTab('b2');"
+                             style="background:rgba(204, 204, 204, 0.200);">
+                            Leaderboard
+                        </div>
+                        <div class="column a3 btn" onclick="openTab('b3');"
+                             style="background: rgba(204, 204, 204, 0.200);">
+                            Discussions
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="myDIV">
+                    <div id="b1" class="containerTab btn active" style="display:block;background:green">
+
+                        <h3>Function prototype:</h3>
+
+                        int solveMeFirst(int a, int b);
+
+                        where,
+
+                        a is the first integer input.
+                        b is the second integer input
+                        <h3>Return values</h3>
+
+                        sum of the above two integers
+                        <h3>Sample Input</h3>
+                        <div class="sampleInput">
+                            a = 2
+                            b = 3
+                        </div>
+
+                        <h3>Sample Output</h3>
+                        <div class="sampleOutput">
+                            5
+                        </div>
+                        <div class="eplaination">
+                            Explanation
+
+                            The sum of the two integers and is computed as: .
+                        </div>
+
+                    </div>
+
+                    <div id="b2" class="containerTab btn" style="display:none;background:rgb(243, 247, 247)">
+
+                        <h3>Leaderboard</h3>
+                        <table>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Points</th>
+                            </tr>
+                            <tr>
+
+                                <td>Jill</td>
+                                <td>Smith</td>
+                                <td>50</td>
+
+                            </tr>
+                            <tr>
+                                <td>Eve</td>
+                                <td>Jackson</td>
+                                <td>94</td>
+                            </tr>
+                            <tr>
+                                <td>Adam</td>
+                                <td>Johnson</td>
+                                <td>67</td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>97</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="b3" class="containerTab btn" style="display:none;background:rgb(243, 247, 247)">
+
+                        <h3>Discussions</h3>
+                        <p class="userComment">
+                            <a href="#" class="userLink">
+                                <img class="commentIcon ci" src="../Images/social.png" width="54px" height="54px"><label class="name ci">John Doe :</label>
+                            </a>
+                            <label class="commentContext">Help me</label>
+                        </p>
+                        <p class="userComment">
+                            <textarea placeholder="Write a Comment"></textarea>
+                            <button class="commentBtn">Post</button>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <nav>
+            <ul>
+                <li>Author : <a href="#"> John</a></li>
+                <li class="invisible">&times</li>
+                <li>Dificulty : <a href="#"> Easy</a></li>
+                <li class="invisible">&times</li>
+                <li>Max score : <a href="#"> 1</a></li>
+            </ul>
+            <div class="PostCode">
+                <textarea class="Coding" placeholder="Write a code"></textarea>
+                <button class="commentBtn">Submit</button>
+            </div>
+        </nav>
+    </section>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
+    <script>
+        function openTab(tabName) {
+            var i, x;
+            x = document.getElementsByClassName("containerTab");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+        var header = document.getElementById("myDIV");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+</body>
+
+</html>

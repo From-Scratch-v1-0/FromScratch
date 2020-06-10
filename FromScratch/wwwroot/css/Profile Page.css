@@ -1,231 +1,569 @@
 * {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  font-family: Arial;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-.container {
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-left: auto;
-  padding-right: auto;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-.topnav {
-  background-color: #6610f2;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-left: auto;
-  padding-right: auto;
-}
-.icon {
-  margin: 10px 0px !important;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-.topnav-left a {
-  color: white;
-  text-decoration: none;
-  float: left;
-  font-weight: bold;
-  display: block;
-  text-align: center;
-}
-.topnav-left a:hover {
-  color: #f2aa10;
-}
-.topnav-left a:first-child {
-  padding-bottom: 0px;
-  user-select: none;
-}
-.topnav-left a:not(:first-child) {
-  padding: 35px 10px;
-}
-.topnav-right a {
-  float: right;
-  padding: 10px;
-  border: 1px solid #707070;
-  border-radius: 50%;
-  overflow-x: hidden;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  color: #007bff;
-  background-color: white;
-}
-.topnav-right a:first-child {
-  margin-top: 5px;
-  max-height: 100%;
-  user-select: none;
-}
-.topnav-right a:not(:first-child) {
-  margin: 24px 10px;
-}
-.row {
-  width: 100%;
-}
-.column {
-  float: left;
-  width: 50%;
+    box-sizing: border-box;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+body {
+    margin: 0;
+    font-family: Arial;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-left: auto;
+    padding-right: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.topnav {
+    background-color: #6610f2;
+    background: linear-gradient(-45deg,#6610F2,#6c12fc,#6C12FC,#6610F2);
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.icon {
+    margin: 10px 0px !important;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.topnav-left a {
+    color: white;
+    text-decoration: none;
+    float: left;
+    font-weight: bold;
+    display: block;
+    text-align: center;
 }
 
 .middleColumn-left {
-  width: 35%;
-  float: left;
-  height: 800px;
-  overflow: hidden;
+    background-color: #2e87e640;
 }
+
 .middleColumn-right {
-  width: 65%;
-  float: left;
-  height: 800px;
-  overflow: hidden;
+    background-color: #2e87e610;
+    background-color: #773ad910;
 }
+
+.topnav-left a:hover {
+    color: #f2aa10;
+}
+
+.topnav-left a:first-child {
+    padding-bottom: 0px;
+    user-select: none;
+}
+
+.topnav-left a:not(:first-child) {
+    padding: 35px 10px;
+}
+
+.topnav-right a {
+    float: right;
+    padding: 10px;
+    border: 1px solid #707070;
+    border-radius: 50%;
+    overflow-x: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    color: #007bff;
+    background-color: white;
+}
+
+    .topnav-right a:first-child {
+        margin-top: 5px;
+        max-height: 100%;
+        user-select: none;
+    }
+
+    .topnav-right a:not(:first-child) {
+        margin: 24px 10px;
+    }
+
+.row {
+    width: 100%;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.middleColumn-left {
+    width: 35%;
+    float: left;
+    height: 800px;
+    overflow: hidden;
+}
+
+.middleColumn-right {
+    width: 65%;
+    float: left;
+    height: 800px;
+    overflow: hidden;
+}
+
 .img {
-  border: 1px solid #707070;
-  border-radius: 50%;
-  max-width: 100%;
-  height: auto;
-  box-shadow: 0px 5px 10px #707070;
-  padding: 5px;
+    border: 1px solid #707070;
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 2.5px 10px #707070;
+    background-color: white;
 }
+
 h1,
 h2,
 h3 {
-  font-weight: normal;
-  color: #707070;
+    font-weight: normal;
+    color: #707070;
+    font-family: "Nunito_sans";
+    font-family: "Baloo";
+    font-family: "Squada_One";
+    font-family: "Anton"
 }
+
 .userInfo {
-  color: #707070;
-  font-size: 15px;
+    color: #707070;
+    font-size: 15px;
+    font-family: "Nunito_sans";
+    /*font-family: "Squada_One";*/
+    font-family: "Baloo";
 }
+
 .aboutUser {
-  border-top: 1px solid #707070;
-  border-bottom: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+    color: #707070;
+    font-weight: bold;
+    border-top: 1px solid #707070;
 }
+
+.userEducation {
+    border-bottom: 1px solid #707070;
+    color: #707070;
+    font-weight: bold;
+}
+
 .userInfo label {
-  color: #007bff;
+    color: #007bff;
 }
+
 .aboutMe {
-  border: 1px solid #707070;
-  padding: 20px 20px;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 200px;
+    border: 1px solid #707070;
+    padding: 20px 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 200px;
+    font-family: "Merriweather";
+    box-shadow: 2.5px 2.5px 5px #707070;
+    background-color: #2e87e615;
 }
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #707070;
+    padding: 20px 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    font-family: "Merriweather";
+    box-shadow: 2.5px 2.5px 5px #707070;
+    outline: none;
+    background-color: #2e8ae60c;
+}
+
 .mySkills,
 .myProjects {
-  min-height: 100px;
-  overflow: hidden;
+    min-height: 100px;
+    overflow: hidden;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
-.mySkills a,
-.myProjects a {
-  border: 1px solid #707070;
-  padding: 5px 15px;
-  float: left;
-  display: block;
-  margin: 2px 2px;
-  border-radius: 20px;
-  text-decoration: none;
-  color: #007bff;
-  text-transform: capitalize;
-  text-align: center;
-}
-.mySkills a:hover,
-.myProjects a:hover {
-  border: 1px solid #007bff;
-}
+
+    .mySkills a,
+    .myProjects a {
+        border: 2px solid white;
+        background-color: #2e87e6;
+        padding: 5px 15px;
+        float: left;
+        display: block;
+        margin: 2px 2px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #007bff;
+        color: white;
+        text-transform: capitalize;
+        text-align: center;
+        font-family: "Nunito_sans";
+        font-family: "Squada_One";
+        font-family: "Baloo";
+        font-weight: 600;
+    }
+
+        .mySkills a:hover,
+        .myProjects a:hover {
+            background-color: white;
+            color: #2e87e6;
+            border: 2px solid #2e87e6;
+        }
+
 .footer {
-  text-align: center;
-  clear: both;
-  width: 100%;
-  overflow: hidden;
-  padding: 20px 5%;
-  background-color: #343a40;
-  color: white;
+    text-align: center;
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 5%;
+    background-color: #343a40;
+    color: white;
 }
-.footer a {
-  color: #007bff;
-  text-decoration: none;
-}
+
+    .footer a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
 .dropbtn {
-  color: white;
-  border: none;
-  cursor: pointer;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .dropdown {
-  position: relative;
-  display: block;
+    position: relative;
+    display: block;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 88px;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-.dropdown-content a {
-  color: #707070;
-  padding: 12px 16px;
-  text-decoration: none;
-  float: unset;
-  padding: unset;
-  display: block;
-  border-radius: unset;
-  border: none;
-  margin-top: 0px;
-  margin: 0 !important;
-  padding: 10px 10px;
-  text-align: center;
-}
-.dropdown-content a:hover {
-  color: #007bff;
-}
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-.show {
-  display: block;
-}
-@media screen and (max-width: 800px) {
-  .middleColumn-left,
-  .middleColumn-right {
-    width: 100%;
-    float: none;
-    display: block;
-  }
-  .column {
-    float: none;
-    width: 100%;
-    display: block;
-  }
-  .topnav-left-right {
-    display: unset;
-  }
-  .middleColumn-left,
-  .middleColumn-right {
-    height: unset;
-  }
-}
-@media screen and (max-width:400px){
-  .dropdown-content{
-    top:177px;
-  }
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 88px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
+    .dropdown-content a {
+        color: #707070;
+        padding: 12px 16px;
+        text-decoration: none;
+        float: unset;
+        padding: unset;
+        display: block;
+        border-radius: unset;
+        border: none;
+        margin-top: 0px;
+        margin: 0 !important;
+        padding: 10px 10px;
+        text-align: center;
+    }
+
+        .dropdown-content a:hover {
+            color: #007bff;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+.show {
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .middleColumn-left,
+    .middleColumn-right {
+        width: 100%;
+        float: none;
+        display: block;
+    }
+
+    .column {
+        float: none;
+        width: 100%;
+        display: block;
+    }
+
+    .topnav-left-right {
+        display: unset;
+    }
+
+    .middleColumn-left,
+    .middleColumn-right {
+        height: unset;
+    }
+
+    .genders input, .genders label {
+        float: left;
+        clear: both;
+        display: block;
+    }
+}
+
+p {
+    margin-block-start: 14px;
+    margin-block-end: 10px;
+}
+
+@media screen and (max-width:400px) {
+    .dropdown-content {
+        top: 177px;
+    }
+}
+
+@font-face {
+    font-family: "Squada_One";
+    src: url("../Fonts/Squada_One/SquadaOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Baloo";
+    src: url("../Fonts/Baloo_Chettan_2/BalooChettan2-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Nunito_sans";
+    src: url("../Fonts/Nunito_Sans/NunitoSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "MerriWeather";
+    src: url("../Fonts/Merriweather/Merriweather-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Anton";
+    src: url("../Fonts/Anton/Anton-Regular.ttf");
+}
+
+.genders {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.modal input[type=text], .modal input[type=email] {
+    width: 100%;
+    padding: 8px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color: #007bff;
+    text-transform: capitalize;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    float: right;
+    outline: none;
+}
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 30px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+    .modal .aboutUser {
+        border-top: none;
+        margin-top: 30px;
+        border: none;
+    }
+
+    .modal .userEducation {
+        border: none;
+    }
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    padding: 20px 40px;
+    border-radius: 20px;
+    padding-bottom: 100px;
+}
+
+.close {
+    color: #707070;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover, .close:focus {
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.Datepicker select {
+    color: #007bff;
+    font-family: "Baloo";
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #007bff;
+}
+
+.Datepicker {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.submitBtn {
+    color: white;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    border-radius: 20px;
+    margin-top: 10px;
+    outline: none;
+    font-family: "Baloo";
+    font-weight: 900;
+    font-size: 15px;
+}
+
+    .submitBtn:hover {
+        color: #007bff;
+        background-color: white;
+        border: 1px solid #007bff;
+    }
+
+.aboutSubmit {
+    width: auto;
+}
+
+
+
+
+
+
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 20px;
+}
+
+    .modal2 input {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 20px;
+        outline: none;
+        border: 2px solid #007bff;
+        color: #007bff;
+        text-transform: capitalize;
+    }
+
+        .modal2 input::placeholder {
+            color: #007bff;
+        }
+
+
+.modal-content2 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.close2 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close2:hover,
+    .close2:focus {
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.skillBtn {
+    background-color: #007bff;
+    padding: 10px 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    border: 2px solid #007bff;
+    color: white;
+    border-radius: 20px;
+}
+
+    .skillBtn:hover {
+        background-color: white;
+        color: #007bff;
+    }
