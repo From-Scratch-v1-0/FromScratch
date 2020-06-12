@@ -23,12 +23,12 @@ namespace FromScratch.Controllers
         }
 
         [AllowAnonymous]
-        public IActionResult CatalogPage()
+        public IActionResult CatalogPage(IEnumerable<ProjectProduct> project)
         {
             return View();
         }
 
-        public IActionResult Project() 
+        public IActionResult Project(int projectkey, string projectname, int? projecttypekey, string description, int? rating) 
         {
             return View();
         }

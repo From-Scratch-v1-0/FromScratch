@@ -10,6 +10,7 @@ namespace Services.Repositories
     {
         private readonly FSContext _context;
         private IUserRepository _userRepository;
+        private IProjectRepository _projRepository;
 
         public UOW(FSContext context)
         {
@@ -23,6 +24,15 @@ namespace Services.Repositories
                 if (_userRepository == null)
                     _userRepository = new UserRepository(_context);
                 return _userRepository;
+            }
+        }
+        public IProjectRepository ProjectProduct
+        {
+            get
+            {
+                if (_projRepository == null)
+                    _projRepository = new ProjectRepository(_context);
+                return _projRepository;
             }
         }
 
