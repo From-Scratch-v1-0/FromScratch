@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Services.Contracts
 {
-    public interface IProjectRepository : IBaseRepository<Project>
+    public interface IProjectProductRepository:IBaseRepository<ProjectProduct>
     {
     }
 }

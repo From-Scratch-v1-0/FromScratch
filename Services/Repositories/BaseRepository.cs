@@ -28,7 +28,7 @@ namespace Services.Repositories
             Context.Set<T>().Remove(entity);
         }
 
-        public IEnumerable<T> GeAll()
+        public IEnumerable<T> GetAll()
         {
             return Context.Set<T>();
         }

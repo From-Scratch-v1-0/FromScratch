@@ -10,6 +10,7 @@ namespace Services.Repositories
     {
         private readonly FSContext _context;
         private IUserRepository _userRepository;
+        private IProjectProductRepository _projprodRepository;
         private IProjectRepository _projRepository;
 
         public UOW(FSContext context)
@@ -26,7 +27,16 @@ namespace Services.Repositories
                 return _userRepository;
             }
         }
-        public IProjectRepository ProjectProduct
+        public IProjectProductRepository ProjectProduct
+        {
+            get
+            {
+                if (_projprodRepository == null)
+                    _projprodRepository = new ProjectProductRepository(_context);
+                return _projprodRepository;
+            }
+        }
+        public IProjectRepository Project
         {
             get
             {
@@ -35,7 +45,6 @@ namespace Services.Repositories
                 return _projRepository;
             }
         }
-
         public void Commit()
         {
             _context.SaveChanges();

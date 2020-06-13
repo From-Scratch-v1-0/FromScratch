@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Services.Repositories
 {
-    public class ProjectRepository : BaseRepository<Project>, IProjectRepository
+    public class ProjectProductRepository : BaseRepository<ProjectProduct>, IProjectProductRepository
     {
-        public ProjectRepository(FSContext context) : base(context)
+        public ProjectProductRepository(FSContext context) : base(context)
         {
         }
     }

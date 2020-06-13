@@ -26,22 +26,22 @@ namespace FromScratch.Controllers
             _userManager = userManager;
         }
         [AllowAnonymous]
+        public ViewResult CatalogPage() => View(_service.ProjectProduct.GetAll());
+
+        public ViewResult Project() => View(_service.Project.GetAll());
         
-        [HttpGet]
-        public IActionResult CatalogPage(IEnumerable<ProjectProduct> prpr)
+        /*[HttpPost]
+         public IActionResult CatalogPage()
         {
-            //ორივე შემთხვევისათვის გავტესტე და მუშაობს! ჯერჯერობით იყოს ასე და თუ რამეა ჩაასწორეთ არ მაქვს პრობლემა!//
-            //დაახლოებით ასეთი რამე უნდა გაკეთდეს და თუ რამე შეცდომაა ან არ უნდა იყოს ისე, როგორც საჭიროა, მაშინ ჩაასწორეთ!//
-            //ეს ჯერჯერობით იყოს დაკომენტარებული//
-           /* if (prpr.Where(x=> x.ProjectKey>=1).Count()==0)
-                return View("EmptyCatalog");*/
-            return View(prpr);          
+            return View();
         }
-        [HttpGet]
-        public IActionResult Project(Project proj) 
+        
+        [HttpPost]
+        public IActionResult Project() 
         {
-            return View(proj);
-        }
+            
+            return View();
+        }*/
  
     }
 }

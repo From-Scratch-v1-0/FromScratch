@@ -7,7 +7,8 @@ namespace Services.Contracts
     public interface IUOW : IDisposable
     {
         IUserRepository User { get; }
-        IProjectRepository ProjectProduct { get; }
+        IProjectProductRepository ProjectProduct { get; }
+        IProjectRepository Project { get; }
         void Commit();
     }
 }
