@@ -118,8 +118,9 @@ body {
 .RecoveryBtn {
     color: white !important;
     font-size: 12px !important;
-    padding: 5px 0px !important;
-    margin-left: 5px;
+    padding: 9px 0px !important;
+    margin-left:135px;
+    
 }
 
 .loginInput-last {
@@ -204,12 +205,23 @@ h1 {
     max-width: 300px;
     font-size: 14px;
 }
-
+.RememberCheckbox {
+    width: unset !important;
+    cursor:pointer;
+}
+.RemebmerLabel{
+    float:left;
+    font-size:12px !important;
+    color:white;
+}
 label a {
     color: #007bff;
     text-decoration: none;
 }
-
+.text-danger{
+    color:red;
+    margin-top:10px;
+}
 .field-wrap {
     position: relative;
     margin-bottom: 20px;

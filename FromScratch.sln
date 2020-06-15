@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FromScratch", "FromScratch\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS-DAL", "FS-DAL\FS-DAL.csproj", "{FD219C43-1604-4910-A1CB-49D53FDCCB6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{6E094B0F-A52C-4BB9-916D-2EF2C31B1032}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{6E094B0F-A52C-4BB9-916D-2EF2C31B1032}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

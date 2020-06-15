@@ -67,7 +67,7 @@ namespace FromScratch
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Account}/{action=Login}/{id?}");
+                    pattern: "{controller=Welcome}/{action=Index}/{id?}");
             });
         }
     }

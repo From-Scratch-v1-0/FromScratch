@@ -77,5 +77,16 @@ namespace FromScratch.Controllers
             return View(account);
         }
 
+
+        public IActionResult Signup()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Signup(string smt)
+        {
+            return View();
+        }
     }
 }
