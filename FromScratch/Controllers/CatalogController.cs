@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore;
+using FromScratch.Models.Repositories;
 using FS_DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
+using Services.Repositories;
+using System.Security.Cryptography.X509Certificates;
 
 namespace FromScratch.Controllers
 {
@@ -21,17 +25,23 @@ namespace FromScratch.Controllers
             _service = service;
             _userManager = userManager;
         }
-
         [AllowAnonymous]
-        public IActionResult CatalogPage()
+        public ViewResult CatalogPage() => View(_service.ProjectProduct.GetAll());
+
+        public ViewResult Project() => View(_service.Project.GetAll());
+        
+        /*[HttpPost]
+         public IActionResult CatalogPage()
         {
             return View();
         }
-
+        
+        [HttpPost]
         public IActionResult Project() 
         {
+            
             return View();
-        }
-
+        }*/
+ 
     }
 }

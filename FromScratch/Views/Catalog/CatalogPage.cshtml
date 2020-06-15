@@ -1,4 +1,5 @@
-﻿
+﻿@using FS_DAL.Entities;
+@model IEnumerable<ProjectProduct>
 @{
     ViewData["Title"] = "Catalog";
     Layout = "~/Views/Shared/Layouts/_CatalogLayout.cshtml";
@@ -20,83 +21,37 @@
                 </div>
             </div>
         </div>
-
+        
         <div>
             <div class="top-row">
                 <div class="row">
                     <a href="#">
-                        <div class="middle-column">
-                            <div class="inside-column">
-                                <a href="#" class="border">
-                                    <div class="cardBorder">
-                                        <h3 class="tag">Project</h3>
-                                    </div>
-                                    <div class="descriptionPadding">
-                                        <p class="Description">
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem
-                                            Ipsum has been the industry's standard dummy text ever since the 1500s
-                                        </p>
-                                    </div>
+                        @foreach (var item in Model)
+                        {
+                            <div class="middle-column">
+                                <div class="inside-column">
+                                    <a asp-controller="catalog" asp-action="project">
+                                        <div class="cardBorder">
+                                            <h3 class="tag">@item.ProjectName</h3>
+                                        </div>
+                                        <div class="descriptionPadding">
+                                            <p class="Description">
+                                                @item.Description
+                                            </p>
+                                        </div>
 
-                                    <div class="cardFoot">
-                                        <input type="button" value="Front-End">
-                                        <input type="button" value="Back-End">
-                                        <input type="button" value="Database">
-                                        <input type="button" value="Web">
-                                    </div>
+                                        <div class="cardFoot">
+                                            <input type="button" value="Front-End">
+                                            <input type="button" value="Back-End">
+                                            <input type="button" value="Database">
+                                            <input type="button" value="Web">
+                                        </div>
 
-                                </a>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="middle-column">
-                            <div class="inside-column">
-                                <a href="#" class="border">
-                                    <div class="cardBorder">
-                                        <h3 class="tag">Project</h3>
-                                    </div>
-                                    <div class="descriptionPadding">
-                                        <p class="Description">
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem
-                                            Ipsum has been the industry's standard dummy text ever since the 1500s
-                                        </p>
-                                    </div>
-
-                                    <div class="cardFoot">
-                                        <input type="button" value="Front-End">
-                                        <input type="button" value="Back-End">
-                                        <input type="button" value="Database">
-                                        <input type="button" value="Web">
-                                    </div>
-
-                                </a>
-                            </div>
-                        </div>
-                        <div class="middle-column">
-                            <div class="inside-column">
-                                <a href="#" class="border">
-                                    <div class="cardBorder">
-                                        <h3 class="tag">Project</h3>
-                                    </div>
-                                    <div class="descriptionPadding">
-                                        <p class="Description">
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem
-                                            Ipsum has been the industry's standard dummy text ever since the 1500s
-                                        </p>
-                                    </div>
-
-                                    <div class="cardFoot">
-                                        <input type="button" value="Front-End">
-                                        <input type="button" value="Back-End">
-                                        <input type="button" value="Database">
-                                        <input type="button" value="Web">
-                                    </div>
-
-                                </a>
-                            </div>
-                        </div>
+                        }
+                    </a>
                 </div>
             </div>
             <div class="bottom-row">

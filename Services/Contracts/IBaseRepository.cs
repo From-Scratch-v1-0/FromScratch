@@ -7,7 +7,7 @@ namespace Services.Contracts
 {
     public interface IBaseRepository<T>
     {
-        IEnumerable<T> GeAll();
+        IEnumerable<T> GetAll();
         T GetById(int id);
         IEnumerable<T> GetByCondition(Expression<Func<T,bool>> expression);
         void Create(T entity);
