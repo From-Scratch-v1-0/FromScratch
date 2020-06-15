@@ -1,4 +1,46 @@
-﻿@{ 
-    Layout = null;
+﻿@model AccountVM
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/Layouts/_WelcomeLayout.cshtml";
 }
 
+<div class="header container">
+    <div class="headerleftside">
+        <a href="#"><img src="~/images/owlicon - Copy.png" class="img-fluid"></a>
+        <a href="#" class="underline" tabIndex="-1">Contacts</a>
+        <a href="#" class="underline" tabIndex="-1">About us</a>
+    </div>
+    <div class="login-container">
+        <div class="login-container-div">
+            <form asp-controller="account" asp-action="login" method="post">
+                <input asp-for="Login.UserName" type="text" placeholder="Username" class="loginInput">
+                <input asp-for="Login.Password" type="password" placeholder="Password" class="loginInput">
+                <button type="submit" class="loginBtn">Login</button>
+                <br />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <label class="RemebmerLabel" asp-for="Login.RememberMe">
+                    <input asp-for="Login.RememberMe" type="checkbox" class="RememberCheckbox"> Remember me
+                </label>
+                @*<input type="text" placeholder="Username" name="Username" class="loginInput-last">*@
+                <a href="#" class="RecoveryBtn" tabIndex="-1">Forgot password?</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+<div class="middle ">
+    <div class="GetStarted">
+        <h2>Getting Started</h2>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including
+            versions of Lorem Ipsum.
+        </p><br />
+        <a href="Signup">Registration</a>
+    </div>
+</div>
