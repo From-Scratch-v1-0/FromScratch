@@ -1,4 +1,4 @@
-﻿@model AccountVM
+﻿@model SignUpVM
 @{
     ViewBag.Title = "Welcome";
     Layout = "~/Views/Shared/Layouts/_WelcomeLayout.cshtml";
@@ -18,25 +18,25 @@
                 <div class="tab-content">
                     <div id="signup">
                         <h1>Get Started</h1>
-                        <form asp-action="login" asp-controller="account" method="post">
+                        <form asp-action="Signup" asp-controller="Account" method="post">
                             @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                             <div class="field-wrap">
-                                <input asp-for="Signup.UserName" type="text" required autocomplete="off" placeholder="Username" />
+                                <input asp-for="UserName" type="text" required autocomplete="off" placeholder="Username" />
 
-                                <span asp-validation-for="Signup.UserName" class="text-danger"></span>
+                                <span asp-validation-for="UserName" class="text-danger"></span>
                             </div>
                             <div class="field-wrap">
-                                <input asp-for="Signup.Email" type="email" required autocomplete="off" placeholder="Email" />
-                                <span asp-validation-for="Signup.Email" class="text-danger"></span>
+                                <input asp-for="Email" type="email" required autocomplete="off" placeholder="Email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                             <div class="field-wrap">
-                                <input asp-for="Signup.Password" type="password" id="myInput1" required autocomplete="off" placeholder="Password" />
-                                <span asp-validation-for="Signup.Password" class="text-danger"></span>
+                                <input asp-for="Password" type="password" id="myInput1" required autocomplete="off" placeholder="Password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
                                 @*<input type="radio" onclick="myFunction()" class="show" name="radio">*@
                             </div>
                             <div class="field-wrap">
-                                <input asp-for="Signup.ConfirmPassword" type="password" id="myInput2" required autocomplete="off" placeholder="Re-Enter Password" />
-                                <span asp-validation-for="Signup.ConfirmPassword" class="text-danger"></span>
+                                <input asp-for="ConfirmPassword" type="password" id="myInput2" required autocomplete="off" placeholder="Re-Enter Password" />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                 @*<input type="radio" onclick="myFunction()" class="show" name="radio">*@
                             </div>
                             <div class="bot-row">

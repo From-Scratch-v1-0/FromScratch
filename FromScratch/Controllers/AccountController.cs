@@ -84,9 +84,33 @@ namespace FromScratch.Controllers
         }
 
         [HttpPost]
-        public IActionResult Signup(string smt)
+        public async Task<IActionResult> Signup(SignUpVM newUser)
         {
-            return View();
+
+            if (ModelState.IsValid) 
+            {
+                User user = new User
+                {
+                    UserName = newUser.UserName,
+                    Email = newUser.Email,
+                    PasswordHash = newUser.Password
+                };
+
+                var result = await _userManager.CreateAsync(user, user.PasswordHash);
+                if (result.Succeeded) 
+                {
+                    return RedirectToAction("Login");
+                }
+            }
+
+            return View(newUser);
+        }
+
+        public async Task<IActionResult> Signout() 
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Login");
         }
     }
 }
