@@ -13,7 +13,7 @@ namespace FromScratch.Controllers
 {
     public class AccountController : Controller
     {
-        
+        //new server commit test
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
 
