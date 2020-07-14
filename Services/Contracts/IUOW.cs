@@ -9,6 +9,11 @@ namespace Services.Contracts
         IUserRepository User { get; }
         IProjectProductRepository ProjectProduct { get; }
         IProjectRepository Project { get; }
+        IProjectTypeRepositry ProjectType { get; }
+
+        ISphereRepositry Sphere { get; }
+
+        IProjectSphereRepository ProjectSphere { get; }
         void Commit();
     }
 }

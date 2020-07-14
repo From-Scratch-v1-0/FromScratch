@@ -16,6 +16,10 @@ using FS_DAL.Context;
 using FS_DAL.Entities;
 using Services.Repositories;
 using Services.Contracts;
+using FS_BAL.Interfaces;
+using FS_BAL.Operations;
+using AutoMapper;
+using FS_BAL.Mapping;
 
 namespace FromScratch
 {
@@ -39,6 +43,9 @@ namespace FromScratch
                     .AddEntityFrameworkStores<FSContext>();
 
             services.AddScoped<IUOW,UOW>();
+            services.AddScoped<ICatalogOperations, CatalogOperations>();
+            services.AddAutoMapper(typeof(MapProfile).Assembly);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

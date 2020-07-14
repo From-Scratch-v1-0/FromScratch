@@ -12,7 +12,9 @@ namespace Services.Repositories
         private IUserRepository _userRepository;
         private IProjectProductRepository _projprodRepository;
         private IProjectRepository _projRepository;
-
+        private IProjectTypeRepositry projectTypeRepositry;
+        private ISphereRepositry sphereRepositry;
+        private IProjectSphereRepository projectSphereRepository;
         public UOW(FSContext context)
         {
             _context = context;
@@ -27,6 +29,17 @@ namespace Services.Repositories
                 return _userRepository;
             }
         }
+
+        public IProjectTypeRepositry ProjectType
+        {
+            get
+            {
+                if (projectTypeRepositry == null)
+                    projectTypeRepositry = new ProjectTypeRepositry(_context);
+                return projectTypeRepositry;
+            }
+        }
+
         public IProjectProductRepository ProjectProduct
         {
             get
@@ -45,6 +58,27 @@ namespace Services.Repositories
                 return _projRepository;
             }
         }
+
+        public ISphereRepositry Sphere 
+        {
+            get 
+            {
+                if (sphereRepositry == null)
+                    sphereRepositry = new SphereRepositry(_context);
+                return sphereRepositry;
+            }
+        }
+
+        public IProjectSphereRepository ProjectSphere 
+        {
+            get 
+            {
+                if (projectSphereRepository == null)
+                    projectSphereRepository = new ProjectSphereRepository(_context);
+                return projectSphereRepository;
+            }
+        }
+
         public void Commit()
         {
             _context.SaveChanges();

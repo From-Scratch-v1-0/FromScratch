@@ -11,37 +11,59 @@ using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 using Services.Repositories;
 using System.Security.Cryptography.X509Certificates;
+using FS_BAL.Interfaces;
+using X.PagedList;
 
 namespace FromScratch.Controllers
 {
     [Authorize]
     public class CatalogController : Controller
     {
-        private readonly IUOW _service;
+        private readonly ICatalogOperations _operation;
         private readonly UserManager<User> _userManager;
 
-        public CatalogController(IUOW service,UserManager<User> userManager)
+        public CatalogController(ICatalogOperations operation,UserManager<User> userManager)
         {
-            _service = service;
+            _operation = operation;
             _userManager = userManager;
         }
-        [AllowAnonymous]
-        public ViewResult CatalogPage() => View(_service.ProjectProduct.GetAll());
 
-        public ViewResult Project() => View(_service.Project.GetAll());
-        
-        /*[HttpPost]
-         public IActionResult CatalogPage()
+
+        [AllowAnonymous]
+        public IActionResult CatalogPage(string? sphereName,string search, int? page)
         {
+
+            var pageNumber = page ?? 1;
+
+            if (sphereName == "Front-End")
+            {
+                if (search == null)
+                    goto There;
+                var result = _operation.Search(search);
+                var pagee = result.ToPagedList(pageNumber, 6);
+                return View(pagee);
+            }
+            
+
+        There:
+            var data = _operation.GetAllProjects();
+            var onePage = data.ToPagedList(pageNumber, 6);
+            return View(onePage);
+
+
+
+
+
+
+
+        }
+
+     
+        public IActionResult Project()
+        {
+
             return View();
         }
-        
-        [HttpPost]
-        public IActionResult Project() 
-        {
-            
-            return View();
-        }*/
- 
+
     }
 }
