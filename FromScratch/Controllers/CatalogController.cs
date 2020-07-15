@@ -30,12 +30,12 @@ namespace FromScratch.Controllers
 
 
         [AllowAnonymous]
-        public IActionResult CatalogPage(string? sphereName,string search, int? page)
+        public IActionResult CatalogPage(string optionName, string search, int? page)
         {
 
             var pageNumber = page ?? 1;
 
-            if (sphereName == "Front-End")
+            if (optionName == null)
             {
                 if (search == null)
                     goto There;
@@ -43,7 +43,32 @@ namespace FromScratch.Controllers
                 var pagee = result.ToPagedList(pageNumber, 6);
                 return View(pagee);
             }
-            
+            else if (optionName == "Front-End") 
+            {
+                var result = _operation.getSpecificProjects(optionName);
+                var pagee = result.ToPagedList(pageNumber, 6);
+                return View(pagee);
+            }
+            else if (optionName == "Back-End")
+            {
+                var result = _operation.getSpecificProjects(optionName);
+                var pagee = result.ToPagedList(pageNumber, 6);
+                return View(pagee);
+            }
+            else if (optionName == "Database")
+            {
+                var result = _operation.getSpecificProjects(optionName);
+                var pagee = result.ToPagedList(pageNumber, 6);
+                return View(pagee);
+            }
+            else if (optionName == "Mobile")
+            {
+                var result = _operation.getSpecificProjects(optionName);
+                var pagee = result.ToPagedList(pageNumber, 6);
+                return View(pagee);
+            }
+
+
 
         There:
             var data = _operation.GetAllProjects();

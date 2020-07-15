@@ -298,7 +298,7 @@ body {
     overflow: hidden;
 }
 
-    .categories input {
+    .categories a {
         border: none;
         margin: 0px 5px;
         cursor: pointer;
@@ -313,7 +313,7 @@ body {
         font-family: "Nunito_sans";
     }
 
-        .categories input:hover {
+        .categories a:hover {
             background-color: white;
             border: 1px solid #f6c23e;
         }

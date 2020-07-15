@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>Catalog</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
 
     <link href="~/css/Catalog.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
@@ -12,39 +14,44 @@
 <body>
     <div class="topnav row ">
         <div class="column topnav-left">
-            <a href="#"><img src="~/images/owlicon - Copy.png" class="icon"></a>
-            <a asp-controller="catalog" asp-action="catalogpage">Catalog</a>
-            <a href="#">Private Projects</a>
+            <a asp-controller="Catalog" asp-action="CatalogPage"><img src="~/images/owlicon - Copy.png" class="icon"></a>
+            <a asp-controller="Catalog" asp-action="CatalogPage">Catalog</a>
+            <a asp-controller="Catalog" asp-action="PrivateProject">Private Projects</a>
         </div>
         <div class="column topnav-right">
-            <div class="dropdown">
-                <a class="dropbtn" onclick="myFunction()">
-                    <span class="usernamespan">John Doe</span><img src="~/images/social (4).png" class="profileIcon dropbtn" style="width: 44px; height : 44px;">
-                </a>
-                <!--<a href="#" class="myHover">7.6</a>-->
-                <a href="#" class="myHover" id="star-five">
-                    <!--<img src="../Images/signs.png">7.6</svg>-->
-                    <div class="star-container">
-                        <!--../Images/WhiteStarBlackBorder.png-->
-                        @*<img src="../Images/WhiteStar(3) - Copy.png" alt="star-five" class="star" width="34px"
-                            height="34px" u/mouseover ="toggleInfoImage()" :src="src"> ?????? *@
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="dropdown">
+                    <a class="dropbtn" onclick="myFunction()">
+                        <span class="usernamespan">@User.Identity.Name</span><img src="~/images/social (4).png" class="profileIcon dropbtn" style="width: 44px; height : 44px;">
+                    </a>
+                    <!--<a href="#" class="myHover">7.6</a>-->
+                    <a href="#" class="myHover" id="star-five">
+                        <!--<img src="../Images/signs.png">7.6</svg>-->
+                        <div class="star-container">
+                            <!--../Images/WhiteStarBlackBorder.png-->
+                            @*<img src="../Images/WhiteStar(3) - Copy.png" alt="star-five" class="star" width="34px"
+                                height="34px" u/mouseover ="toggleInfoImage()" :src="src"> ?????? *@
 
-                        <img src="~/images/WhiteStar(3) - Copy.png" alt="star-five" class="star" style="width:34px;
+                            <img src="~/images/WhiteStar(3) - Copy.png" alt="star-five" class="star" style="width:34px;
                              height:34px; mousover:toggleInfoImage(); " /> @*???????*@
 
                             <div class="centered">7.6</div>
                         </div>
                     </a>
                     <div class="dropdown-content" id="myDropdown">
-                        <a href="#">User Profile</a>
-                        <a href="#">Settings</a>
+                        <a  asp-controller="Home" asp-action="Index">User Profile</a>
                         <a asp-controller="Account" asp-action="Signout">Log out</a>
                     </div>
                 </div>
-                </a>
+            }
+            else
+            {
+        <a asp-controller="Account" asp-action="Login">LogIn</a>
+            }
 
+            </a>
             </div>
-
         </div>
 
         <div>

@@ -9,9 +9,9 @@
 <body>
     <div class="topnav row ">
         <div class="column topnav-left">
-            <a href="#"><img src="~/images/owlicon.png" class="icon"></a>
-            <a href="#">Catalog</a>
-            <a href="#">Private Projects</a>
+            <a  asp-controller="Home" asp-action="Index"><img src="~/images/owlicon.png" class="icon"></a>
+            <a  asp-controller="Catalog" asp-action="CatalogPage">Catalog</a>
+            <a asp-controller="Catalog" asp-action="PrivateProject">Private Projects</a>
         </div>
         <div class="column topnav-right">
             <div class="dropdown">
@@ -21,8 +21,7 @@
                 </a>
                 <a href="#">7.6</a>
                 <div class="dropdown-content" id="myDropdown">
-                    <a href="#">User Profile</a>
-                    <a href="#">Settings</a>
+                    <a  asp-controller="Home" asp-action="Index">User Profile</a>
                     <a asp-controller="Account" asp-action="Signout">Log out</a>
                 </div>
             </div>

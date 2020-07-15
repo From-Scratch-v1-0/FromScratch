@@ -3,6 +3,7 @@ using FS_DAL.Entities;
 using Services.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Services.Repositories
@@ -11,6 +12,8 @@ namespace Services.Repositories
     {
         public ProjectProductRepository(FSContext context) : base(context)
         {
+            
         }
+
     }
 }
