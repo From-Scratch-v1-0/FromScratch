@@ -43,7 +43,7 @@
                         <a href="#">
                             <div class="middle-column">
                                 <div class="inside-column">
-                                    <a asp-controller="catalog" asp-action="project">
+                                    <a asp-controller="catalog" asp-action="project" asp-route-id="@item.Id">
                                         <div class="cardBorder">
                                             <h3 class="tag">@item.ProjectName  | @item.Type  | @item.Rating</h3>
                                         </div>

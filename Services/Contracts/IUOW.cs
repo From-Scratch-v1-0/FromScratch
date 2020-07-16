@@ -14,6 +14,7 @@ namespace Services.Contracts
         ISphereRepositry Sphere { get; }
 
         IProjectSphereRepository ProjectSphere { get; }
+        IDiscussionRepository Discussion { get; }
         void Commit();
     }
 }

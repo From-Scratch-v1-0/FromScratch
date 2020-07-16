@@ -15,6 +15,7 @@ namespace Services.Repositories
         private IProjectTypeRepositry projectTypeRepositry;
         private ISphereRepositry sphereRepositry;
         private IProjectSphereRepository projectSphereRepository;
+        private IDiscussionRepository discussionRepository;
         public UOW(FSContext context)
         {
             _context = context;
@@ -76,6 +77,16 @@ namespace Services.Repositories
                 if (projectSphereRepository == null)
                     projectSphereRepository = new ProjectSphereRepository(_context);
                 return projectSphereRepository;
+            }
+        }
+
+        public IDiscussionRepository Discussion 
+        {
+            get 
+            {
+                if (discussionRepository == null)
+                    discussionRepository = new DiscussionRepository(_context);
+                return discussionRepository;
             }
         }
 

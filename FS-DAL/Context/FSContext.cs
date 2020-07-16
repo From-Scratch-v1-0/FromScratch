@@ -27,6 +27,7 @@ namespace FS_DAL.Context
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserType> UserType { get; set; }
+        public virtual DbSet<Discussion> Discussion { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -189,6 +190,18 @@ namespace FS_DAL.Context
                     .HasConstraintName("FK__User__UserTypeKe__5AEE82B9");
             });
 
+            modelBuilder.Entity<Discussion>(entity => {
+                entity.HasKey(e => e.DiscussionKey);
+                entity.ToTable("Discussion", "comment");
+                entity.Property(e => e.Comment).HasColumnType("nvarchar(MAX)");
+                entity.HasOne(d => d.ProjectProductKeyNavigation)
+                .WithMany(p => p.Discussions)
+                .HasForeignKey(d => d.ProjectProductKey);
+
+                entity.HasOne(d => d.UserKeyNavigation)
+                .WithMany(p => p.Discussions)
+                .HasForeignKey(d => d.UserKey);
+            });
 
             modelBuilder.Seed();
         }

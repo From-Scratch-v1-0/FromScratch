@@ -74,20 +74,13 @@ namespace FromScratch.Controllers
             var data = _operation.GetAllProjects();
             var onePage = data.ToPagedList(pageNumber, 6);
             return View(onePage);
-
-
-
-
-
-
-
         }
 
      
-        public IActionResult Project()
+        public IActionResult Project(int id)
         {
-
-            return View();
+            var project = _operation.getProject(id);
+            return View(project);
         }
 
     }

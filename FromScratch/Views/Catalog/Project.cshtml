@@ -1,5 +1,4 @@
-﻿@using FS_DAL.Entities;
-@model IEnumerable<Project>
+﻿@model SingleProjectDTO
 @{
     Layout = null;
 }
@@ -22,17 +21,17 @@
             <div class="articleBox">
 
 
-                <h1>Project name</h1>
+                <h1>@Model.ProjectName</h1>
                 <div class="row">
                     <div id="myDIV">
                         <div class="column a1 btn active" onclick="openTab('b1');"
                              style="background:rgba(204, 204, 204, 0.200);">
                             Problem
                         </div>
-                        <div class="column a2 btn" onclick="openTab('b2');"
+                        @*<div class="column a2 btn" onclick="openTab('b2');"
                              style="background:rgba(204, 204, 204, 0.200);">
                             Leaderboard
-                        </div>
+                        </div>*@
                         <div class="column a3 btn" onclick="openTab('b3');"
                              style="background: rgba(204, 204, 204, 0.200);">
                             Discussions
@@ -44,36 +43,38 @@
                 <div id="myDIV">
                     <div id="b1" class="containerTab btn active" style="display:block;background:green">
 
-                        <h3>Function prototype:</h3>
+                        @Model.Description
 
-                        int solveMeFirst(int a, int b);
+                        @*<h3>Function prototype:</h3>
 
-                        where,
+        int solveMeFirst(int a, int b);
 
-                        a is the first integer input.
-                        b is the second integer input
-                        <h3>Return values</h3>
+        where,
 
-                        sum of the above two integers
-                        <h3>Sample Input</h3>
-                        <div class="sampleInput">
-                            a = 2
-                            b = 3
-                        </div>
+        a is the first integer input.
+        b is the second integer input
+        <h3>Return values</h3>
 
-                        <h3>Sample Output</h3>
-                        <div class="sampleOutput">
-                            5
-                        </div>
-                        <div class="eplaination">
-                            Explanation
+        sum of the above two integers
+        <h3>Sample Input</h3>
+        <div class="sampleInput">
+            a = 2
+            b = 3
+        </div>
 
-                            The sum of the two integers and is computed as: .
-                        </div>
+        <h3>Sample Output</h3>
+        <div class="sampleOutput">
+            5
+        </div>
+        <div class="eplaination">
+            Explanation
+
+            The sum of the two integers and is computed as: .
+        </div>*@
 
                     </div>
 
-                    <div id="b2" class="containerTab btn" style="display:none;background:rgb(243, 247, 247)">
+                    @*<div id="b2" class="containerTab btn" style="display:none;background:rgb(243, 247, 247)">
 
                         <h3>Leaderboard</h3>
                         <table>
@@ -105,7 +106,7 @@
                                 <td>97</td>
                             </tr>
                         </table>
-                    </div>
+                    </div>*@
 
                     <div id="b3" class="containerTab btn" style="display:none;background:rgb(243, 247, 247)">
 
@@ -130,11 +131,11 @@
 
         <nav>
             <ul>
-                <li>Author : <a href="#"> John</a></li>
+                @*<li>Author : <a href="#"> John</a></li>*@
                 <li class="invisible">&times</li>
-                <li>Dificulty : <a href="#"> Easy</a></li>
+                <li>Dificulty : <a href="#">@Model.Difficulty</a></li>
                 <li class="invisible">&times</li>
-                <li>Max score : <a href="#"> 1</a></li>
+                <li>Rating : <a href="#">@Model.Rating</a></li>
             </ul>
             <div class="PostCode">
                 <textarea class="Coding" placeholder="Write a code"></textarea>

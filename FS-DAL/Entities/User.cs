@@ -13,5 +13,6 @@ namespace FS_DAL.Entities
         public int? Rating { get; set; }
 
         public virtual UserType UserTypeKeyNavigation { get; set; }
+        public virtual ICollection<Discussion> Discussions { get; set; }
     }
 }

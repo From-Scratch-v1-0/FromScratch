@@ -11,7 +11,9 @@ namespace FS_DAL.Entities
         public int? ProjectTypeKey { get; set; }
         public string Description { get; set; }
         public int? Rating { get; set; }
+        public string? Difficulty { get; set; }
 
         public virtual ProjectType ProjectTypeKeyNavigation { get; set; }
+        public virtual ICollection<Discussion> Discussions { get; set; }
     }
 }

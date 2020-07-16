@@ -11,5 +11,6 @@ namespace FS_BAL.Interfaces
         IEnumerable<ProjectDTO> GetAllProjects();
         IEnumerable<ProjectDTO> Search(string search);
         IEnumerable<ProjectDTO> getSpecificProjects(string name);
+        SingleProjectDTO getProject(int id);
     }
 }

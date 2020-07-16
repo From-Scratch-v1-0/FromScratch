@@ -17,6 +17,9 @@ namespace FS_BAL.Mapping
                 .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.ProjectTypeName));
             CreateMap<Sphere, ProjectDTO>()
                 .ForMember(dest => dest.Sphere, opt => opt.MapFrom(src => src.SphereName));
+
+            CreateMap<ProjectProduct, SingleProjectDTO>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ProjectKey));
         }
     }
 }

@@ -80,8 +80,31 @@ namespace FS_BAL.Operations
             return modiefedData;
         }
 
+
+        public SingleProjectDTO getProject(int id) 
+        {
+            var project = _service.ProjectProduct.GetById(id);
+
+            var mappedData = mapper.Map<SingleProjectDTO>(project);
+
+            var finalData = singleProjectMultiMapping(mappedData);
+            return finalData;
+        }
+
+        private SingleProjectDTO singleProjectMultiMapping(SingleProjectDTO mappedData)
+        {
+            var discussion = _service.Discussion.GetAll();
+            var projectId = mappedData.Id;
+
+            var projectComments = discussion.Where(e => e.ProjectProductKey == projectId);
+
+            mappedData.Discussions = projectComments;
+            return mappedData;
+        }
+
+
         // mapping from distinct classes to one class
-        public IEnumerable<ProjectDTO> projectMultiMapping(IEnumerable<ProjectDTO> modiefedData)
+        private IEnumerable<ProjectDTO> projectMultiMapping(IEnumerable<ProjectDTO> modiefedData)
         {
             var projects = _service.ProjectProduct.GetAll();
             var type = _service.ProjectType.GetAll();
