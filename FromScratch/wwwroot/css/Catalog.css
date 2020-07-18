@@ -7,7 +7,9 @@ body {
     font-family: Arial;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    
 }
+
 
 .container {
     padding-left: 5%;
@@ -311,6 +313,8 @@ body {
         outline: none;
         border: 1px solid transparent;
         font-family: "Nunito_sans";
+        text-decoration:none;
+        color:black;
     }
 
         .categories a:hover {
@@ -550,3 +554,47 @@ h1 {
         .pagination a:hover:not(.active) {
             background-color: #ddd;
         }
+
+.loginOnHeader{
+    color:white !important;
+    background-color:#f2aa10;
+    padding:10px 20px;
+    font-weight:bold;
+    margin-top:25px !important;
+    border-radius:10px;
+
+}
+.someDecoration{
+    float:right;
+}
+.typeDecoration {
+    background-color: #6610f2;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #6610f2;
+}
+    .typeDecoration:hover{
+        background-color:white;
+        color:#6610f2;
+        
+    }
+.ratingDecoration {
+    background-color: #f2aa10;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    border: 1px solid #f2aa10;
+}
+.ratingDecoration:hover{
+    background-color:white;
+    color:#f2aa10;
+    
+}

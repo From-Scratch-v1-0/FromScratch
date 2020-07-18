@@ -28,6 +28,7 @@ namespace FS_DAL.Context
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserType> UserType { get; set; }
         public virtual DbSet<Discussion> Discussion { get; set; }
+        public virtual DbSet<Skills> Skills { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -42,6 +43,17 @@ namespace FS_DAL.Context
                 entity.ToTable("Country", "core");
 
                 entity.Property(e => e.CountryName).HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<Skills>(entity => 
+            {
+                entity.HasKey(e => e.SkillKey);
+                entity.ToTable("Skills", "hr");
+                entity.Property(e => e.SkillName).HasColumnType("nvarchar(150)");
+
+                entity.HasOne(d => d.UserKeyNavigation)
+                .WithMany(b => b.Skills)
+                .HasForeignKey(d => d.UserFKey);
             });
 
             modelBuilder.Entity<Gender>(entity =>
@@ -62,11 +74,18 @@ namespace FS_DAL.Context
 
                 entity.ToTable("Person", "hr");
 
-                entity.Property(e => e.Address).HasMaxLength(300);
+                entity.Property(e => e.Address).HasMaxLength(500);
 
-                entity.Property(e => e.FirstName).HasMaxLength(100);
+                entity.Property(e => e.FullName).HasMaxLength(500);
 
-                entity.Property(e => e.LastName).HasMaxLength(100);
+                entity.Property(e => e.Address).HasColumnType("nvarchar(300)");
+                entity.Property(e => e.BirthDate).HasColumnType("datetime");
+                entity.Property(e => e.Proffesion).HasColumnType("nvarchar(300)");
+                entity.Property(e => e.Education).HasColumnType("nvarchar(400)");
+
+                entity.Property(e => e.Education).HasColumnType("nvarchar(400)");
+
+                entity.Property(e => e.AboutMe).HasColumnType("nvarchar(MAX)");
 
                 entity.Property(e => e.PhoneNumber)
                     .HasColumnName("Phone_Number")

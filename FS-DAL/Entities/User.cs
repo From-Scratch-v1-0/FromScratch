@@ -14,5 +14,6 @@ namespace FS_DAL.Entities
 
         public virtual UserType UserTypeKeyNavigation { get; set; }
         public virtual ICollection<Discussion> Discussions { get; set; }
+        public virtual ICollection<Skills> Skills { get; set; }
     }
 }

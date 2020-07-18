@@ -8,6 +8,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-family: Arial;
+    background-color: #f8f9fa;
 }
 
 .header {
@@ -246,21 +247,7 @@ label a {
         font-family: "Merriweather";
     }
 
-    .GetStarted a {
-        color: #ececec;
-        background-color: #b79292;
-        padding: 15px;
-        border-radius: 20px;
-        text-decoration: none;
-        border: 2px solid #b79292;
-        font-weight: bold;
-        font-size: 24px;
-    }
-
-        .GetStarted a:hover {
-            color: #b79292;
-            background-color: #ececec;
-        }
+    
 
 .top-row:after {
     content: "";
@@ -579,4 +566,60 @@ label a {
     .form {
         margin: 40px 10px;
     }
+}
+.goBack{
+    text-decoration:none;
+    color:blue;
+}
+.loginContainer{
+    width:400px;
+    
+    padding:40px 10px;
+    background-color:white;
+    border-radius:10px;
+    box-shadow:0px 0px 10px #707070;
+}
+    .loginContainer input, .loginContianer button {
+        width: 100%;
+        margin: 10px 0px;
+        height: 30px;
+        border-radius: 10px;
+        padding: 10px;
+
+    }
+.GetStarted a {
+    color:blue;
+    text-decoration:none;
+    font-size:14px;
+}
+.loginContainer button {
+    background-color: #f2aa10;
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.loginContainer input{
+    border:1px solid #707070;
+    padding:20px 15px;
+    color:#707070;
+}
+.loginContainer h2{
+    color:#707070;
+}
+.remember {
+    width: 20px !important;
+    
+    height:unset !important;
+}
+.remembertxt{
+    color:blue;
+    font-size:15px;
+
+}
+.topnav-right{
+ 
 }
