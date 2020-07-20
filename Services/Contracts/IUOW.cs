@@ -16,6 +16,8 @@ namespace Services.Contracts
         IProjectSphereRepository ProjectSphere { get; }
         IDiscussionRepository Discussion { get; }
         IPersonRepository Person { get; }
+        ISkillsRepository Skills { get; }
+        ICountryRepository Country { get; }
         void Commit();
     }
 }

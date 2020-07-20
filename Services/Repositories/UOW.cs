@@ -1,4 +1,5 @@
 ﻿using FS_DAL.Context;
+using FS_DAL.Entities;
 using Services.Contracts;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,31 @@ namespace Services.Repositories
         private IProjectSphereRepository projectSphereRepository;
         private IDiscussionRepository discussionRepository;
         private IPersonRepository personRepository;
+        private ISkillsRepository skillsRepository;
+        private ICountryRepository countryRepository;
         public UOW(FSContext context)
         {
             _context = context;
+        }
+
+        public ICountryRepository Country 
+        {
+            get 
+            {
+                if (countryRepository == null)
+                    countryRepository = new CountryRepository(_context);
+                return countryRepository;
+            }
+        }
+
+        public ISkillsRepository Skills
+        {
+            get 
+            {
+                if (skillsRepository == null)
+                    skillsRepository = new SkillsRepository(_context);
+                return skillsRepository;
+            }
         }
 
         public IUserRepository User

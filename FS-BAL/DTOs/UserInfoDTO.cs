@@ -11,7 +11,7 @@ namespace FS_BAL.DTOs
 {
     public class UserInfoDTO
     {
-        public int Id { get; set; } // aspUser
+        public string Id { get; set; } // aspUser
         public string Email { get; set; } // aspUser
         public double Rating { get; set; } // aspUser
         public string FullName { get; set; } // person

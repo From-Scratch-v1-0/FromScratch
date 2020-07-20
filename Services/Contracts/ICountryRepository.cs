@@ -5,8 +5,7 @@ using System.Text;
 
 namespace Services.Contracts
 {
-    public interface IUserRepository : IBaseRepository<User>
+    public interface ICountryRepository : IBaseRepository<Country>
     {
-        User GetUserById(string id);
     }
 }

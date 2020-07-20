@@ -12,5 +12,12 @@ namespace Services.Repositories
         public UserRepository(FSContext context) : base(context)
         {
         }
+
+        public User GetUserById(string id) 
+        {
+            var user = Context.User.Find(id);
+            return user;
+        }
+
     }
 }

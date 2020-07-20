@@ -8,5 +8,6 @@ namespace Services.Contracts
     public interface IPersonRepository : IBaseRepository<Person>
     {
         void AddPerson(Person person);
+        Person GetPersobById(string id);
     }
 }

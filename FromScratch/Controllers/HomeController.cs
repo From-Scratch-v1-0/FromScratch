@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using FS_DAL.Entities;
 using System.Security.Claims;
 using FS_BAL.DTOs;
+using FS_BAL.Interfaces;
 
 namespace FromScratch.Controllers
 {
@@ -19,13 +20,13 @@ namespace FromScratch.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IUOW _service;
+        private readonly IUserOperations _operations;
         private readonly UserManager<User> _userManager;
 
-        public HomeController(ILogger<HomeController> logger,IUOW service, UserManager<User> userManager)
+        public HomeController(ILogger<HomeController> logger,IUserOperations operations, UserManager<User> userManager)
         {
             _logger = logger;
-            _service = service;
+            _operations = operations;
             _userManager = userManager;
         }
         // Home/Index (Test comment)
@@ -34,9 +35,9 @@ namespace FromScratch.Controllers
             var user = await _userManager.GetUserAsync(HttpContext.User);
             ViewBag.Mail = user.Email;
 
+            var userInfo = _operations.GetUserInfoById(user.Id);
 
-
-            return View();
+            return View(userInfo);
         }
 
         [HttpPost]

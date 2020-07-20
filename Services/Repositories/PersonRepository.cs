@@ -18,5 +18,11 @@ namespace Services.Repositories
             Context.Add(person);
             Context.SaveChanges();
         }
+
+        public Person GetPersobById(string id)
+        {
+            var person = Context.Person.Find(id);
+            return person;
+        }
     }
 }
