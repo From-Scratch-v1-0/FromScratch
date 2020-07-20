@@ -1,135 +1,90 @@
-﻿@{
+﻿@model UserInfoDTO
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="middle-row ">
+    <div class="middle-row ">
 
-    <div class="middleColumn-left container">
-        <a href="#"><img src="~/images/user.png" class="img" width="128px" height="128px"></a>
-        <h3>Username</h3>
-        <h3>
-            About &#160;&#160;
-            <button id="myBtn" style="width:auto;">
-                <img src="~/images/edit.png">
-            </button>
-        </h3>
-        <div id=" myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div class=" userInfo">
-                    @*<form asp-action="index" action="" method="post">*@
-                        <div class="aboutUser">
+        <div class="middleColumn-left container">
+            <a href="#"><img src="~/images/user.png" class="img" width="128px" height="128px"></a>
+            <h3>@User.Identity.Name</h3>
+            <h3>
+                About &#160;&#160;
+                <button id="myBtn" style="width:auto;">
+                    <img src="~/images/edit.png">
+                </button>
+            </h3>
+
+            <form asp-controller="Home" asp-action="UserInfo" method="post">
+                <div id=" myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class=" userInfo">
+
+                            <div class="aboutUser">
+                                <p>
+                                    Full Name :
+                                    <input type="text" value="John Doe">
+                                </p>
+                                <p>
+                                    Gemder :
+                                    <div class="genders">
+                                        <input type="radio" name="gender" id="male" value="male" checked><label for="male">Male</label>
+                                        <input type="radio" name="gender" id="female" value="female"><label for="female">Female</label>
+                                        <input type="radio" name="gender" id="other" value="other"><label for="other">Other</label>
+                                    </div>
+
+                                </p>
+                                <p>
+                                    Birth Date :
+
+                                </p>
+                            </div>
+
                             <p>
-                                Full Name :
-                                <input type="text" value="John Doe">
+                                Mail :
+                                <input type="email" value="JohnDoe@gmail.com">
                             </p>
                             <p>
-                                Gemder :
-                                <div class="genders">
-                                    <input type="radio" name="gender" id="male" value="male" checked><label for="male">Male</label>
-                                    <input type="radio" name="gender" id="female" value="female"><label for="female">Female</label>
-                                    <input type="radio" name="gender" id="other" value="other"><label for="other">Other</label>
-                                </div>
-
+                                Phone :
+                                <input type="text" maxlength="9" value="598112358">
                             </p>
                             <p>
-                                Birth Date :
-                                <div class="Datepicker">
-                                    <select name="cars" id="daypicker">
-                                        <option value="1" selected>1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-                                        <option value="31">31</option>
-                                    </select>
-                                    <select name="monthpicker" id="monthpicker">
-                                        <option value="1" selected>January</option>
-                                        <option value="2">February</option>
-                                        <option value="3">March</option>
-                                        <option value="4">April</option>
-                                        <option value="5">May</option>
-                                        <option value="6">June</option>
-                                        <option value="7">July</option>
-                                        <option value="8">August</option>
-                                        <option value="9">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
-                                    </select>
-                                    <select name="yearpicker" id="yearpicker"></select>
+                                City :
+                                <input type="text" value="Tbilisi">
                             </p>
                         </div>
+                        <div class="userEducation">
+                            <p>Proffesion : <input type="text" value="FullStack Developer"> </p>
+                            <p>Education : <input type="text" value="Tbilisi State University"></p>
+                            <p>Degree : <input type="text" value="Computer Science"></p>
 
-                        <p>
-                            Mail :
-                            <input type="email" value="JohnDoe@gmail.com">
-                        </p>
-                        <p>
-                            Phone :
-                            <input type="text" maxlength="9" value="598112358">
-                        </p>
-                        <p>
-                            City :
-                            <input type="text" value="Tbilisi">
-                        </p>
+                        </div>
+                        <input type="submit" value="Submit" class="submitBtn">
+
+
+                    </div>
+                </div>
+            </form>
+
+            <div class=" userInfo">
+                <div class="aboutUser">
+                    <p>Full Name : <label>@Model.FullName</label> </p>
+                    <p>Gender : <label>@Model.GenderKey</label></p>
+                    <p>Birth Date : <label>@Model.BirthDate</label></p>
+                    <p>Mail : <label>@ViewBag.Mail</label></p>
+                    <p>Phone : <label>@Model.PhoneNumber</label></p>
+                    <p>Country : <label>@Model.CountryKey</label></p>
                 </div>
                 <div class="userEducation">
-                    <p>Proffesion : <input type="text" value="FullStack Developer"> </p>
-                    <p>Education : <input type="text" value="Tbilisi State University"></p>
-                    <p>Degree : <input type="text" value="Computer Science"></p>
-
+                    <p>Proffesion : <label>@Model.Proffesion</label> </p>
+                    <p>Education : <label>@Model.Education</label></p>
+                    <p>Rating : <label>@Model.Rating</label></p>
                 </div>
-                <input type="submit" value="Submit" class="submitBtn">
-            @*</form>*@
-
             </div>
         </div>
-    </div>
-
-    <div class=" userInfo">
-        <div class="aboutUser">
-            <p>Full Name : <label>John Doe</label> </p>
-            <p>Gemder : <label>Male</label></p>
-            <p>Birth Date : <label>01 / 02 / 1998</label></p>
-            <p>Mail : <label>JohnDoe@gmail.com</label></p>
-            <p>Phone : <label>598 13 25 37</label></p>
-            <p>City : <label>Tbilisi</label></p>
-        </div>
-        <div class="userEducation">
-            <p>Proffesion : <label>Fullstack Developer</label> </p>
-            <p>Education : <label>Tbilisi State University</label></p>
-            <p>Degree : <label>Computer Science</label></p>
-            <p>Rating : <label>7.6</label></p>
-        </div>
-    </div>
-</div>
 <div class="middleColumn-right container">
+    <form asp-controller="" asp-action="" method="post">
         <h3>
             About Me &#160;&#160;<button class="aboutSubmit" href="#" type="submit">
                 <img src="~/images/edit.png"
@@ -138,27 +93,32 @@
         </h3>
 
 
-        <textarea>Im Programmer</textarea>
+        <textarea>@Model.AboutMe</textarea>
+    </form>
+
+    @foreach (var skill in Model.Skills)
+    {
+        <h3>
+            skill &#160;&#160;<button id="myBtn2" href="#">
+                <img src="~/images/edit.png"
+                     style="float: right;">
+            </button>
+        </h3>
+    }
 
 
+    <form asp-controller="" asp-action="" method="post">
+        <div id="myModal2" class="modal2">
 
+            <div class="modal-content2">
+                <span class="close2">&times;</span>
+                <input type="text" placeholder="Add or Delete your Skill">
+                <button type="submit" class="skillBtn">Add Skill</button>
+                <button type="button" class="skillBtn">Delete</button>
+            </div>
 
-    <h3>
-        Skills &#160;&#160;<button id="myBtn2" href="#">
-            <img src="~/images/edit.png"
-                 style="float: right;">
-        </button>
-    </h3>
-    <div id="myModal2" class="modal2">
-
-        <div class="modal-content2">
-            <span class="close2">&times;</span>
-            <input type="text" placeholder="Add or Delete your Skill">
-            <button type="submit" class="skillBtn">Add Skill</button>
-            <button type="button" class="skillBtn">Delete</button>
         </div>
-
-    </div>
+    </form>
 
     <div class="mySkills">
         <a href="#">html</a>
@@ -173,8 +133,15 @@
         <a href="#">C#</a>
         <a href="#">...</a>
     </div>
-    <h3>Current Projects</h3>
     <div class="myProjects">
+        @foreach (var project in Model.CurrentProjects)
+        {
+            <h3>@project</h3>
+        }
+    </div>
+
+
+    @*<div class="myProjects">
         <a href="#">Sample Project</a>
         <a href="#">Sample Project</a>
         <a href="#">Sample Project</a>
@@ -191,5 +158,5 @@
         <a href="#">Sample Project</a>
         <a href="#">Sample Project</a>
         <a href="#">&#160;&#160; ... &#160;&#160;</a>
-    </div>
+    </div>*@
 </div>

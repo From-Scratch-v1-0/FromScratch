@@ -44,6 +44,7 @@ namespace FromScratch
 
             services.AddScoped<IUOW,UOW>();
             services.AddScoped<ICatalogOperations, CatalogOperations>();
+            services.AddScoped<IAccountOperations, AccountOperations>();
             services.AddAutoMapper(typeof(MapProfile).Assembly);
 
         }

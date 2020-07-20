@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Authorization;
 using Services.Contracts;
 using Microsoft.AspNetCore.Identity;
 using FS_DAL.Entities;
+using System.Security.Claims;
+using FS_BAL.DTOs;
 
 namespace FromScratch.Controllers
 {
@@ -27,10 +29,23 @@ namespace FromScratch.Controllers
             _userManager = userManager;
         }
         // Home/Index (Test comment)
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            ViewBag.Mail = user.Email;
+
+
+
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> UserInfo(UserInfoDTO model)
+        {
+
+            return View();
+        }
+
 
         public IActionResult Privacy()
         {

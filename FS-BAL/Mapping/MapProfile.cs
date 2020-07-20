@@ -20,6 +20,10 @@ namespace FS_BAL.Mapping
 
             CreateMap<ProjectProduct, SingleProjectDTO>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ProjectKey));
+
+            CreateMap<Person, UserInfoDTO>();
+            CreateMap<User, UserInfoDTO>();
+
         }
     }
 }

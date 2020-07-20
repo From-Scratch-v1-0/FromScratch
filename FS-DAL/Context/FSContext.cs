@@ -70,7 +70,7 @@ namespace FS_DAL.Context
 
             modelBuilder.Entity<Person>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.UserKey);
 
                 entity.ToTable("Person", "hr");
 
@@ -91,7 +91,7 @@ namespace FS_DAL.Context
                     .HasColumnName("Phone_Number")
                     .HasMaxLength(100)
                     .IsUnicode(false);
-
+                entity.Property(e => e.ProfilePic).HasColumnType("nvarchar(1000)");
                 entity.HasOne(d => d.CountryKeyNavigation)
                     .WithMany()
                     .HasForeignKey(d => d.CountryKey)

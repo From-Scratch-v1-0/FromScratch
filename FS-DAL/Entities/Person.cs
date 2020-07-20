@@ -17,6 +17,7 @@ namespace FS_DAL.Entities
         public string Proffesion { get; set; }
         public string Education { get; set; }
         public string AboutMe { get; set; }
+        public string ProfilePic { get; set; }
 
 
         public virtual Country CountryKeyNavigation { get; set; }

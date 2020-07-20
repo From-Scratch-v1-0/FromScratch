@@ -1,4 +1,5 @@
-﻿using FS_DAL.Entities;
+﻿using FS_BAL.Constants;
+using FS_DAL.Entities;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -10,21 +11,24 @@ namespace FS_BAL.DTOs
 {
     public class UserInfoDTO
     {
-        public int Id { get; set; }
-        //public string UserName { get; set; }
-        public string FullName { get; set; }
+        public int Id { get; set; } // aspUser
+        public string Email { get; set; } // aspUser
+        public double Rating { get; set; } // aspUser
+        public string FullName { get; set; } // person
+        public string PhoneNumber { get; set; } // person
+        public GenderEnum GenderKey { get; set; }
         [DataType(DataType.Date)]
-        public DateTime BirthDate { get; set; }
-        public string Mail { get; set; }
-        public string Phone { get; set; }
-        public string Country { get; set; }
-        public string Address { get; set; }
-        public string Proffesion { get; set; }
-        public string Education { get; set; }
-        public double Rating { get; set; }
-        public string AboutMe { get; set; }
-        public IEnumerable<Skills> Skills { get; set; }
-        public IEnumerable<Project> CurrentProjects { get; set; }
+        public DateTime BirthDate { get; set; } // person
+        public string Address { get; set; } // person
+        public string Proffesion { get; set; } // person
+        public string Education { get; set; } // person
+        public string AboutMe { get; set; } // person
+        public string? ProfilePic { get; set; }
+        public ContryEnum CountryKey { get; set; } // person
+        public IEnumerable<string> Skills { get; set; } // skills
+
+
+        public IEnumerable<string> CurrentProjects { get; set; } //project
 
     }
 }

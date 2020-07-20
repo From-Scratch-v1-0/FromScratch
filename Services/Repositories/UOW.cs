@@ -16,6 +16,7 @@ namespace Services.Repositories
         private ISphereRepositry sphereRepositry;
         private IProjectSphereRepository projectSphereRepository;
         private IDiscussionRepository discussionRepository;
+        private IPersonRepository personRepository;
         public UOW(FSContext context)
         {
             _context = context;
@@ -28,6 +29,16 @@ namespace Services.Repositories
                 if (_userRepository == null)
                     _userRepository = new UserRepository(_context);
                 return _userRepository;
+            }
+        }
+
+        public IPersonRepository Person
+        {
+            get 
+            {
+                if (personRepository == null)
+                    personRepository = new PersonRepository(_context);
+                return personRepository;
             }
         }
 
