@@ -9,5 +9,7 @@ namespace FS_BAL.Interfaces
     {
         UserInfoDTO UserInfoMapping(UserInfoDTO userInfo);
         UserInfoDTO GetUserInfoById(string id);
+        void updatePersonInfo(UserInfoDTO userInfo);
+        void addNewSkill(UserInfoDTO userInfoDTO);
     }
 }

@@ -57,12 +57,34 @@ namespace FS_BAL.Operations
             var user = service.User.GetUserById(id);
 
             var mappedData = mapper.Map<UserInfoDTO>(person);
-            mappedData = mapper.Map<UserInfoDTO>(user);
-
+            //mappedData = mapper.Map<UserInfoDTO>(user);
+            mappedData.Id = user.Id;
+            mappedData.Email = user.Email;
+            mappedData.Rating = user.Rating; // reitingi unda iyos double
             var lastChange = UserInfoMapping(mappedData);
             return lastChange;
         }
 
 
+        public void updatePersonInfo(UserInfoDTO userInfo)
+        {
+            var person = mapper.Map<Person>(userInfo);
+
+            service.Person.Update(person);
+            service.Commit();
+        }
+
+
+        public void addNewSkill(UserInfoDTO userInfoDTO) 
+        {
+            var skill = new Skills
+            {
+                SkillName = userInfoDTO.skill,
+                UserFKey = userInfoDTO.Id
+            };
+
+            service.Skills.Create(skill);
+            service.Commit();
+        }
     }
 }

@@ -36,15 +36,31 @@ namespace FromScratch.Controllers
             ViewBag.Mail = user.Email;
 
             var userInfo = _operations.GetUserInfoById(user.Id);
+            ViewBag.BDay = userInfo.BirthDate;
 
             return View(userInfo);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UserInfo(UserInfoDTO model)
+        public async Task<IActionResult> UserInfo(UserInfoDTO model,string optName)
         {
+            if (optName == "person")
+            {
+                var date = new DateTime();
+                if (model.BirthDate == date)
+                {
+                    model.BirthDate = DateTime.Now;
+                }
 
-            return View();
+
+                _operations.updatePersonInfo(model);
+                return RedirectToAction("Index");
+            }
+            else 
+            {
+                _operations.addNewSkill(model);
+                return RedirectToAction("Index");
+            }
         }
 
 

@@ -24,6 +24,9 @@ namespace FS_BAL.Mapping
             CreateMap<Person, UserInfoDTO>();
             CreateMap<User, UserInfoDTO>();
 
+            CreateMap<UserInfoDTO, Person>()
+                .ForMember(dest => dest.UserKey,opt => opt.MapFrom(src => src.Id));
+            CreateMap<UserInfoDTO, User>();
         }
     }
 }

@@ -15,148 +15,184 @@
                 </button>
             </h3>
 
-            <form asp-controller="Home" asp-action="UserInfo" method="post">
-                <div id=" myModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <div class=" userInfo">
 
-                            <div class="aboutUser">
-                                <p>
-                                    Full Name :
-                                    <input type="text" value="John Doe">
-                                </p>
-                                <p>
-                                    Gemder :
-                                    <div class="genders">
-                                        <input type="radio" name="gender" id="male" value="male" checked><label for="male">Male</label>
-                                        <input type="radio" name="gender" id="female" value="female"><label for="female">Female</label>
-                                        <input type="radio" name="gender" id="other" value="other"><label for="other">Other</label>
-                                    </div>
+            @*////////////////////////////////CONSTRUCTION//////////////////////////////////////////////*@
 
-                                </p>
-                                <p>
-                                    Birth Date :
 
-                                </p>
-                            </div>
+        <form asp-controller="Home" asp-action="UserInfo" asp-route-optName="person" method="post">
+            <input hidden asp-for="Id" />
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="userInfo">
+
+                        <div class="aboutUser">
 
                             <p>
-                                Mail :
-                                <input type="email" value="JohnDoe@gmail.com">
+                                Full Name :
+                                <input asp-for="FullName" type="text" value="@Model.FullName">
                             </p>
                             <p>
-                                Phone :
-                                <input type="text" maxlength="9" value="598112358">
+                                Gender :
+
+                                <select asp-for="GenderKey" class="genders"
+                                        asp-items="Html.GetEnumSelectList<FS_BAL.Constants.GenderEnum>()">
+                                    <option value="@Model.GenderKey"></option>
+                                </select>
+
                             </p>
                             <p>
-                                City :
-                                <input type="text" value="Tbilisi">
+                                Birth Date :
+                                <input asp-for="BirthDate" class="Datepicker" value="@Model.BirthDate" />
                             </p>
                         </div>
-                        <div class="userEducation">
-                            <p>Proffesion : <input type="text" value="FullStack Developer"> </p>
-                            <p>Education : <input type="text" value="Tbilisi State University"></p>
-                            <p>Degree : <input type="text" value="Computer Science"></p>
 
-                        </div>
-                        <input type="submit" value="Submit" class="submitBtn">
+                        @*<p>
+                            Mail :
+                            <input asp-for="Email" type="email" value="@Model.Email" />
+                        </p>*@
+                        <p>
+                            Phone :
+                            <input asp-for="PhoneNumber" type="text" maxlength="9" value="@Model.PhoneNumber">
+                        </p>
+                        <p>
+                            Country :
+                            <select asp-for="CountryKey" class="genders"
+                                    asp-items="Html.GetEnumSelectList<FS_BAL.Constants.ContryEnum>()">
+                                <option value="@Model.CountryKey"></option>
+                            </select>
+                        </p>
+                        <p>
+                            Address :
+                            <input asp-for="Address" type="text" value="@Model.Address">
+                        </p>
 
+                        <p>
+                            About Me :
+                            <textarea asp-for="AboutMe">@Model.AboutMe</textarea>
+                        </p>
 
                     </div>
+
+                </div>
+                <div class="userEducation">
+                    <p>Proffesion : <input asp-for="Proffesion" type="text" value="@Model.Proffesion"> </p>
+                    <p>Education : <input asp-for="Education" type="text" value="@Model.Education"></p>
+
+                </div>
+                <input type="submit" value="Submit" class="submitBtn"/>
+
+
+            </div>
+        </form>
+        </div>
+       
+
+
+        <div class=" userInfo">
+            <div class="aboutUser">
+                <p>Full Name : <label>@Model.FullName</label> </p>
+                <p>Gender : <label>@Model.GenderKey</label></p>
+                <p>Birth Date : <label>@Model.BirthDate.Date</label></p>
+                <p>Mail : <label>@ViewBag.Mail</label></p>
+                <p>Phone : <label>@Model.PhoneNumber</label></p>
+                <p>Country : <label>@Model.CountryKey</label></p>
+            </div>
+            <div class="userEducation">
+                <p>Proffesion : <label>@Model.Proffesion</label> </p>
+                <p>Education : <label>@Model.Education</label></p>
+                <p>Rating : <label>@Model.Rating</label></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <div class="middleColumn-right container">
+            
+                <h3>
+                    About Me &#160;&#160;<button class="aboutSubmit" href="#" type="submit">
+                        @*<img src="~/images/edit.png"
+                             style="float: right;">*@
+                    </button>
+                </h3>
+
+
+                <textarea asp-for="AboutMe" >@Model.AboutMe</textarea>
+           
+
+            <h3>
+                My skills &#160;&#160;
+                <button id="myBtn2" href="#">
+                    <img src="~/images/edit.png" style="float: right;">
+                </button>
+            </h3>
+
+
+            <div class="mySkills">
+                @foreach (var skill in Model.Skills)
+                {
+                    <a href="#">@skill</a>
+                }
+            </div>
+
+
+            <form asp-controller="Home" asp-action="UserInfo" method="post">
+                <input hidden asp-for="Id" />
+                <div id="myModal2" class="modal2">
+
+                    <div class="modal-content2">
+                        <span class="close2">&times;</span>
+                        <input asp-for="skill" type="text" placeholder="Add your Skill">
+                        <button type="submit" class="skillBtn">Add Skill</button>
+                        @*<button type="button" class="skillBtn">Delete</button>*@
+                    </div>
+
                 </div>
             </form>
 
-            <div class=" userInfo">
-                <div class="aboutUser">
-                    <p>Full Name : <label>@Model.FullName</label> </p>
-                    <p>Gender : <label>@Model.GenderKey</label></p>
-                    <p>Birth Date : <label>@Model.BirthDate</label></p>
-                    <p>Mail : <label>@ViewBag.Mail</label></p>
-                    <p>Phone : <label>@Model.PhoneNumber</label></p>
-                    <p>Country : <label>@Model.CountryKey</label></p>
-                </div>
-                <div class="userEducation">
-                    <p>Proffesion : <label>@Model.Proffesion</label> </p>
-                    <p>Education : <label>@Model.Education</label></p>
-                    <p>Rating : <label>@Model.Rating</label></p>
-                </div>
-            </div>
-        </div>
-<div class="middleColumn-right container">
-    <form asp-controller="" asp-action="" method="post">
-        <h3>
-            About Me &#160;&#160;<button class="aboutSubmit" href="#" type="submit">
-                <img src="~/images/edit.png"
-                     style="float: right;">
-            </button>
-        </h3>
 
 
-        <textarea>@Model.AboutMe</textarea>
-    </form>
 
-    @foreach (var skill in Model.Skills)
-    {
-        <h3>
-            skill &#160;&#160;<button id="myBtn2" href="#">
-                <img src="~/images/edit.png"
-                     style="float: right;">
-            </button>
-        </h3>
-    }
-
-
-    <form asp-controller="" asp-action="" method="post">
-        <div id="myModal2" class="modal2">
-
-            <div class="modal-content2">
-                <span class="close2">&times;</span>
-                <input type="text" placeholder="Add or Delete your Skill">
-                <button type="submit" class="skillBtn">Add Skill</button>
-                <button type="button" class="skillBtn">Delete</button>
+            @*<div class="mySkills">
+            <a href="#">html</a>
+            <a href="#">css</a>
+            <a href="#">JS</a>
+            <a href="#">asp.net</a>
+            <a href="#">ado.net</a>
+            <a href="#">Bootstrap</a>
+            <a href="#">Angular</a>
+            <a href="#">React.js</a>
+            <a href="#">Sql</a>
+            <a href="#">C#</a>
+            <a href="#">...</a>
+        </div>*@
+            <div class="myProjects">
+                <h3>My Projects</h3>
+                @foreach (var project in Model.CurrentProjects)
+                {
+                    <a href="#"> @project</a>
+                }
             </div>
 
+
+            @*<div class="myProjects">
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">Sample Project</a>
+            <a href="#">&#160;&#160; ... &#160;&#160;</a>
+        </div>*@
         </div>
-    </form>
-
-    <div class="mySkills">
-        <a href="#">html</a>
-        <a href="#">css</a>
-        <a href="#">JS</a>
-        <a href="#">asp.net</a>
-        <a href="#">ado.net</a>
-        <a href="#">Bootstrap</a>
-        <a href="#">Angular</a>
-        <a href="#">React.js</a>
-        <a href="#">Sql</a>
-        <a href="#">C#</a>
-        <a href="#">...</a>
-    </div>
-    <div class="myProjects">
-        @foreach (var project in Model.CurrentProjects)
-        {
-            <h3>@project</h3>
-        }
-    </div>
-
-
-    @*<div class="myProjects">
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">Sample Project</a>
-        <a href="#">&#160;&#160; ... &#160;&#160;</a>
-    </div>*@
-</div>

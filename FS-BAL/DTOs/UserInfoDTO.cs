@@ -13,7 +13,7 @@ namespace FS_BAL.DTOs
     {
         public string Id { get; set; } // aspUser
         public string Email { get; set; } // aspUser
-        public double Rating { get; set; } // aspUser
+        public int? Rating { get; set; } // aspUser
         public string FullName { get; set; } // person
         public string PhoneNumber { get; set; } // person
         public GenderEnum GenderKey { get; set; }
@@ -26,7 +26,7 @@ namespace FS_BAL.DTOs
         public string? ProfilePic { get; set; }
         public ContryEnum CountryKey { get; set; } // person
         public IEnumerable<string> Skills { get; set; } // skills
-
+        public string skill { get; set; }
 
         public IEnumerable<string> CurrentProjects { get; set; } //project
 
