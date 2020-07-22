@@ -72,35 +72,25 @@
     </div>
 
     @*////////////////////////////////////////////////*@
-    @*<div class="pagination-row">
+    <div class="pagination-row">
             <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">&raquo;</a>
+                <a href="https://localhost:44345/Catalog/CatalogPage?page=1">&laquo;</a>
+                <a href="https://localhost:44345/Catalog/CatalogPage?page=1" >1</a>
+                <a href="https://localhost:44345/Catalog/CatalogPage?page=2">2</a>
+                <a href="https://localhost:44345/Catalog/CatalogPage?page=2">&raquo;</a>
             </div>
-        </div>*@
+        </div>
 </div>
 
 
-<div class="justify-content-center" style="padding-left: 300px;">
-    @Html.PagedListPager(Model, page => Url.Action("CatalogPage", new { page = page }),
-new X.PagedList.Mvc.Core.Common.PagedListRenderOptions
-{
-   DisplayItemSliceAndTotal = true,
-   ContainerDivClasses = new[] { "navigation" },
-   LiElementClasses = new[] { "page-item" },
-   PageClasses = new[] { "page-link" }
-})
-</div>
-@section Scripts{
+@*<div class="justify-content-center" style="padding-left: 300px;">
+    @Html.PagedListPager(Model, page => Url.Action("CatalogPage", new { page = page }))
+
+</div>*@
+@*@section Scripts{
     <script>
                 $(document).ready(function () {
                     $('ul.pagination > li.disabled > a').addClass('page-link');
                 });
     </script>
-}
+}*@

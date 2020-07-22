@@ -43,7 +43,7 @@
                 <div class="tab-content">
                     <div id="signup">
                         <h1>Get Started</h1>
-                        <form asp-action="login" asp-controller="account" method="post">
+                        <form asp-action="index" asp-controller="welcome" method="post">
                             @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                             <div class="field-wrap">
                                 <input asp-for="Signup.UserName" type="text" required autocomplete="off" placeholder="Username" />

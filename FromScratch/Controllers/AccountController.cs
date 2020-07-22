@@ -149,7 +149,7 @@ namespace FromScratch.Controllers
         {
             await _signInManager.SignOutAsync();
 
-            return RedirectToAction("Login");
+            return RedirectToAction("index","welcome");
         }
     }
 }
