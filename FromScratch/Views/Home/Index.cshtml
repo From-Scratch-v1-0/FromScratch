@@ -1,6 +1,7 @@
 ﻿@model UserInfoDTO
 @{
     ViewData["Title"] = "Home Page";
+            //Layout = "~/Views/Shared/Layouts/_CatalogLayout.cshtml";
 }
 
     <div class="middle-row ">
@@ -19,91 +20,96 @@
             @*////////////////////////////////CONSTRUCTION//////////////////////////////////////////////*@
 
 
-        <form asp-controller="Home" asp-action="UserInfo" asp-route-optName="person" method="post">
-            <input hidden asp-for="Id" />
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="userInfo">
+            <form asp-controller="Home" asp-action="UserInfo" asp-route-optName="person" method="post">
+                <input hidden asp-for="Id" />
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="userInfo">
 
-                        <div class="aboutUser">
+                            <div class="aboutUser">
 
+                                <p>
+                                    Full Name :
+                                    <input asp-for="FullName" type="text" value="@Model.FullName">
+                                </p>
+                                <p>
+                                    Gender :
+
+                                    <select asp-for="GenderKey" class="genders"
+                                            asp-items="Html.GetEnumSelectList<FS_BAL.Constants.GenderEnum>()">
+                                        <option value="@Model.GenderKey"></option>
+                                    </select>
+
+                                </p>
+                                <p>
+                                    Birth Date :
+                                    <input asp-for="BirthDate" class="Datepicker" value="@Model.BirthDate" />
+                                </p>
+                            </div>
+
+                            @*<p>
+                Mail :
+                <input asp-for="Email" type="email" value="@Model.Email" />
+            </p>*@
                             <p>
-                                Full Name :
-                                <input asp-for="FullName" type="text" value="@Model.FullName">
+                                Phone :
+                                <input asp-for="PhoneNumber" type="text" maxlength="9" value="@Model.PhoneNumber">
                             </p>
                             <p>
-                                Gender :
-
-                                <select asp-for="GenderKey" class="genders"
-                                        asp-items="Html.GetEnumSelectList<FS_BAL.Constants.GenderEnum>()">
-                                    <option value="@Model.GenderKey"></option>
+                                Country :
+                                <select asp-for="CountryKey" class="genders"
+                                        asp-items="Html.GetEnumSelectList<FS_BAL.Constants.ContryEnum>()">
+                                    <option value="@Model.CountryKey"></option>
                                 </select>
-
                             </p>
                             <p>
-                                Birth Date :
-                                <input asp-for="BirthDate" class="Datepicker" value="@Model.BirthDate" />
+                                Address :
+                                <input asp-for="Address" type="text" value="@Model.Address">
                             </p>
+
+                            <p>
+                                About Me :
+                                <textarea asp-for="AboutMe">@Model.AboutMe</textarea>
+                            </p>
+
                         </div>
+                        <div class="userEducation">
+                            <p>Proffesion : <input asp-for="Proffesion" type="text" value="@Model.Proffesion"> </p>
+                            <p>Education : <input asp-for="Education" type="text" value="@Model.Education"></p>
 
-                        @*<p>
-                            Mail :
-                            <input asp-for="Email" type="email" value="@Model.Email" />
-                        </p>*@
-                        <p>
-                            Phone :
-                            <input asp-for="PhoneNumber" type="text" maxlength="9" value="@Model.PhoneNumber">
-                        </p>
-                        <p>
-                            Country :
-                            <select asp-for="CountryKey" class="genders"
-                                    asp-items="Html.GetEnumSelectList<FS_BAL.Constants.ContryEnum>()">
-                                <option value="@Model.CountryKey"></option>
-                            </select>
-                        </p>
-                        <p>
-                            Address :
-                            <input asp-for="Address" type="text" value="@Model.Address">
-                        </p>
-
-                        <p>
-                            About Me :
-                            <textarea asp-for="AboutMe">@Model.AboutMe</textarea>
-                        </p>
-
+                        </div>
+                        
+                            <input type="file" id="myFile" name="filename"> 
+                        
+                        <input type="submit" value="Submit" class="submitBtn" />
                     </div>
+                    
 
+
+                </div>
+            </form>
+            <div class=" userInfo">
+                <div class="aboutUser">
+                    <p>Full Name : <label>@Model.FullName</label> </p>
+                    <p>Gender : <label>@Model.GenderKey</label></p>
+                    <p>Birth Date : <label>@Model.BirthDate.Date</label></p>
+                    <p>Mail : <label>@ViewBag.Mail</label></p>
+                    <p>Phone : <label>@Model.PhoneNumber</label></p>
+                    <p>Country : <label>@Model.CountryKey</label></p>
                 </div>
                 <div class="userEducation">
-                    <p>Proffesion : <input asp-for="Proffesion" type="text" value="@Model.Proffesion"> </p>
-                    <p>Education : <input asp-for="Education" type="text" value="@Model.Education"></p>
-
+                    <p>Proffesion : <label>@Model.Proffesion</label> </p>
+                    <p>Education : <label>@Model.Education</label></p>
+                    <p>Rating : <label>@Model.Rating</label></p>
                 </div>
-                <input type="submit" value="Submit" class="submitBtn"/>
-
-
             </div>
-        </form>
+
         </div>
        
 
 
-        <div class=" userInfo">
-            <div class="aboutUser">
-                <p>Full Name : <label>@Model.FullName</label> </p>
-                <p>Gender : <label>@Model.GenderKey</label></p>
-                <p>Birth Date : <label>@Model.BirthDate.Date</label></p>
-                <p>Mail : <label>@ViewBag.Mail</label></p>
-                <p>Phone : <label>@Model.PhoneNumber</label></p>
-                <p>Country : <label>@Model.CountryKey</label></p>
-            </div>
-            <div class="userEducation">
-                <p>Proffesion : <label>@Model.Proffesion</label> </p>
-                <p>Education : <label>@Model.Education</label></p>
-                <p>Rating : <label>@Model.Rating</label></p>
-            </div>
-        </div>
+        
     </div>
 
 

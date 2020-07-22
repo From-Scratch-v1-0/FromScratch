@@ -1,33 +1,33 @@
 ﻿@model AccountVM
 @{
     ViewBag.Title = "Welcome";
-    Layout = "~/Views/Shared/Layouts/_WelcomeLayout.cshtml";
+    Layout = null;@*"~/Views/Shared/Layouts/_WelcomeLayout.cshtml";*@
 }
 
-<div class="header container">
-    <div class="headerleftside">
-        <a href="#"><img src="~/images/owlicon - Copy.png" class="img-fluid"></a>
-        <a href="#" class="underline" tabIndex="-1">Contacts</a>
-        <a href="#" class="underline" tabIndex="-1">About us</a>
-    </div>
-    <div class="login-container">
-        <div class="login-container-div">
-            <form asp-controller="account" asp-action="login" method="post">
-                <input asp-for="Login.UserName" type="text" placeholder="Username" class="loginInput">
-                <input asp-for="Login.Password" type="password" placeholder="Password" class="loginInput">
-                <button type="submit" class="loginBtn">Login</button>
-                <br />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <label class="RemebmerLabel" asp-for="Login.RememberMe">
-                    <input asp-for="Login.RememberMe" type="checkbox" class="RememberCheckbox"> Remember me
-                </label>
-                @*<input type="text" placeholder="Username" name="Username" class="loginInput-last">*@
-                <a href="#" class="RecoveryBtn" tabIndex="-1">Forgot password?</a>
-
-            </form>
+@*<div class="header container">
+        @*<div class="headerleftside">
+            <a href="#"><img src="~/images/owlicon - Copy.png" class="img-fluid"></a>
+            <a href="#" class="underline" tabIndex="-1">Contacts</a>
+            <a href="#" class="underline" tabIndex="-1">About us</a>
         </div>
-    </div>
-</div>
+        <div class="login-container">
+            <div class="login-container-div">
+                <form asp-controller="account" asp-action="login" method="post">
+                    <input asp-for="Login.UserName" type="text" placeholder="Username" class="loginInput">
+                    <input asp-for="Login.Password" type="password" placeholder="Password" class="loginInput">
+                    <button type="submit" class="loginBtn">Login</button>
+                    <br />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <label class="RemebmerLabel" asp-for="Login.RememberMe">
+                        <input asp-for="Login.RememberMe" type="checkbox" class="RememberCheckbox"> Remember me
+                    </label>
+                    @*<input type="text" placeholder="Username" name="Username" class="loginInput-last">
+                    <a href="#" class="RecoveryBtn" tabIndex="-1">Forgot password?</a>
+
+                </form>
+            </div>
+        </div>
+    </div> *@
 <div class="middle ">
     <center>
         <div class="GetStarted">
@@ -41,8 +41,8 @@
                         <input asp-for="Login.Password" type="password" placeholder="Password" />
                         <button type="submit">Login</button>
                         <span style="float:left;width:50%;"><input asp-for="Login.RememberMe" type="checkbox" class="remember" /> <span class="remembertxt">Remember Me</span></span>
-                        
-                        <span ><a href="#" style="font-size:15px;">Forgot Password ?</a></span>
+
+                        <span><a href="#" style="font-size:15px;">Forgot Password ?</a></span>
                         <hr />
                     </form>
                     <br />
@@ -51,5 +51,5 @@
             </center>
         </div>
     </center>
-    
+
 </div>

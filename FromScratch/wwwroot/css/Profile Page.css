@@ -64,7 +64,7 @@ body {
     padding: 35px 10px;
 }
 
-.topnav-right a {
+/*.topnav-right a {
     float: right;
     padding: 10px;
     border: 1px solid #707070;
@@ -75,7 +75,7 @@ body {
     cursor: pointer;
     color: #007bff;
     background-color: white;
-}
+}*/
 
     .topnav-right a:first-child {
         margin-top: 5px;
@@ -86,6 +86,20 @@ body {
     .topnav-right a:not(:first-child) {
         margin: 24px 10px;
     }
+    .img {
+    border: 1px solid #707070;
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 2.5px 10px #707070;
+    background-color: white;
+}
+
+
+
+
+
+
 
 .row {
     width: 100%;
@@ -116,14 +130,7 @@ body {
     overflow: hidden;
 }
 
-.img {
-    border: 1px solid #707070;
-    border-radius: 50%;
-    max-width: 100%;
-    height: auto;
-    box-shadow: 0px 2.5px 10px #707070;
-    background-color: white;
-}
+
 
 h1,
 h2,
@@ -567,3 +574,192 @@ img.avatar {
         background-color: white;
         color: #007bff;
     }
+
+
+/*.container {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-left: auto;
+    padding-right: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.topnav {
+    background-color: #6610f2;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.icon {
+    margin: 10px 0px !important;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.topnav-left a {
+    color: white;
+    text-decoration: none;
+    float: left;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    font-family: "Nunito_sans";
+}
+
+    .topnav-left a:hover {
+        color: #f2aa10;
+    }
+
+    .topnav-left a:first-child {
+        padding-bottom: 0px;
+        user-select: none;
+    }
+
+    .topnav-left a:not(:first-child) {
+        padding: 35px 10px;
+    }
+
+.topnav-right a {
+    float: right;
+    overflow-x: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    color: #007bff;
+}
+
+    .topnav-right a:first-child {
+        margin-top: 5px;
+        max-height: 100%;
+        user-select: none;
+    }
+
+    .topnav-right a:not(:first-child) {
+        margin: 24px 10px;
+    }
+
+.usernamespan {
+    float: left;
+    clear: both;
+    color: white;
+    margin: 30px 10px;
+    display: block;
+    font-weight: bold;
+    font-family: "Nunito_sans";
+}
+
+.star-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    top: 0px;
+    font-size: 1px !important;
+    margin-top: 2.5px;
+}
+
+@media screen and (max-width: 800px) {
+    .column {
+        float: none;
+        width: 100%;
+        display: block;
+    }
+
+    .topnav-left-right {
+        display: unset;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .dropdown-content {
+        top: 177px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .inside-column {
+        margin: 5px !important;
+    }
+
+    .middle-column {
+        height: unset !important;
+    }
+
+    .middle-row {
+        min-height: unset !important;
+        margin-bottom: 50px;
+    }
+
+    .Description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        font-size: 9px;
+    }
+
+    .cardFoot {
+    }
+
+        .cardFoot input {
+            font-size: 8px !important;
+        }
+
+    .categories {
+    }
+
+        .categories input {
+            width: 30%;
+        }
+
+    .categoryRow {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        float: left;
+        clear: both;
+        content: "";
+    }
+
+    .star-container {
+        display: none;
+    }
+
+    .cardFoot {
+        margin: 2px 10px !important;
+    }
+
+    .searchbtn {
+        display: none;
+    }
+
+    .search:focus {
+        width: 200px !important;
+    }
+
+    .myHover {
+        margin: 0px !important;
+    }
+
+    .inside-column {
+        overflow: hidden;
+    }
+
+    .middle-column:hover .inside-column {
+        box-shadow: 3px 3px 3px #707070;
+    }   
+}*/
+.LogOut{
+    color:white;
+    text-decoration:none;
+    float:right;
+    font-weight:bold;
+    margin-top:30px !important;
+}
+.LogOut:hover{
+    color:#f2aa10;
+    color:red;
+}

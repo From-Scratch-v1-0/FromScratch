@@ -8,18 +8,17 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family:"MerriWeather";
-  background-color: rgb(243, 247, 247);;
-}
-
-header {
+  background-color: rgb(243, 247, 247);
+}co
+/*header {
   background-color: #666;
   padding: 30px;
   text-align: center;
   color: white;
-}
+}*/
 
 nav {
-  float: left;
+  float: right;
   width: 30%;
   min-height: 300px;
   height: 1000px;
@@ -34,7 +33,7 @@ nav ul {
 article {
   float: left;
   padding: 20px;
-  width: 70%;
+  width: 100%;
   background-color: rgb(243, 247, 247);
   height: 1000px;
   
@@ -58,10 +57,10 @@ footer {
   color: white;
 }
 
-.column {
+.column1 {
     float: left;
     width: 33.33%;
-    padding: 50px;
+    padding: 20px;
     text-align: center;
     font-size: 25px;
     cursor: pointer;  
@@ -179,7 +178,7 @@ textarea{
 }
 nav a{
   text-decoration: none;
-  float: right;
+  /*float: right;*/
   color: #007bff;
 }
 .invisible{
@@ -260,3 +259,20 @@ tr:nth-child(even){
   font-family: "Anton";
   src: url("../Fonts/Anton/Anton-Regular.ttf");
 }
+
+.upload{
+    margin-top:50px;
+}
+.upload .btn{
+    background-color:#007bff;
+    color:white;
+    border:2px solid #007bff;
+    border-radius:10px;
+    padding:5px 10px;
+    cursor:pointer;
+    font-size:18px;
+}
+    .upload .btn:hover{
+        background-color:white;
+        color:#007bff;
+    }

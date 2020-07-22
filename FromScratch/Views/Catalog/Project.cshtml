@@ -1,9 +1,9 @@
 ﻿@model SingleProjectDTO
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/Layouts/_CatalogLayout.cshtml";
 }
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 
 <head>
@@ -15,27 +15,39 @@
     <header>
         <h2>Header</h2>
     </header>
-
+    -->
     <section>
         <article>
             <div class="articleBox">
 
-
+                <nav>
+                    <ul>
+                        @*<li>Author : <a href="#"> John</a></li>*@
+                        <li class="invisible">&times</li>
+                        <li>Dificulty : <a href="#">@Model.Difficulty</a></li>
+                        <li class="invisible">&times</li>
+                        <li>Rating : <a href="#">@Model.Rating</a></li>
+                    </ul>
+                    @*<div class="PostCode">
+                <textarea class="Coding" placeholder="Write a code"></textarea>
+                <button class="commentBtn">Submit</button>
+            </div>*@
+                </nav>
                 <h1>@Model.ProjectName</h1>
                 <div class="row">
                     <div id="myDIV">
-                        <div class="column a1 btn active" onclick="openTab('b1');"
+                        <div class="column1 a1 btn active" onclick="openTab('b1');"
                              style="background:rgba(204, 204, 204, 0.200);">
-                            Problem
+                            Project
                         </div>
                         @*<div class="column a2 btn" onclick="openTab('b2');"
-                             style="background:rgba(204, 204, 204, 0.200);">
-                            Leaderboard
-                        </div>*@
-                        <div class="column a3 btn" onclick="openTab('b3');"
-                             style="background: rgba(204, 204, 204, 0.200);">
-                            Discussions
-                        </div>
+                     style="background:rgba(204, 204, 204, 0.200);">
+                    Leaderboard
+                </div>*@
+                        @*<div class="column1 a3 btn" onclick="openTab('b3');"
+                     style="background: rgba(204, 204, 204, 0.200);">
+
+                </div>*@
                     </div>
 
                 </div>
@@ -47,66 +59,66 @@
 
                         @*<h3>Function prototype:</h3>
 
-        int solveMeFirst(int a, int b);
+                int solveMeFirst(int a, int b);
 
-        where,
+                where,
 
-        a is the first integer input.
-        b is the second integer input
-        <h3>Return values</h3>
+                a is the first integer input.
+                b is the second integer input
+                <h3>Return values</h3>
 
-        sum of the above two integers
-        <h3>Sample Input</h3>
-        <div class="sampleInput">
-            a = 2
-            b = 3
-        </div>
+                sum of the above two integers
+                <h3>Sample Input</h3>
+                <div class="sampleInput">
+                    a = 2
+                    b = 3
+                </div>
 
-        <h3>Sample Output</h3>
-        <div class="sampleOutput">
-            5
-        </div>
-        <div class="eplaination">
-            Explanation
+                <h3>Sample Output</h3>
+                <div class="sampleOutput">
+                    5
+                </div>
+                <div class="eplaination">
+                    Explanation
 
-            The sum of the two integers and is computed as: .
-        </div>*@
+                    The sum of the two integers and is computed as: .
+                </div>*@
 
                     </div>
 
                     @*<div id="b2" class="containerTab btn" style="display:none;background:rgb(243, 247, 247)">
 
-                        <h3>Leaderboard</h3>
-                        <table>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Points</th>
-                            </tr>
-                            <tr>
+                <h3>Leaderboard</h3>
+                <table>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Points</th>
+                    </tr>
+                    <tr>
 
-                                <td>Jill</td>
-                                <td>Smith</td>
-                                <td>50</td>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>50</td>
 
-                            </tr>
-                            <tr>
-                                <td>Eve</td>
-                                <td>Jackson</td>
-                                <td>94</td>
-                            </tr>
-                            <tr>
-                                <td>Adam</td>
-                                <td>Johnson</td>
-                                <td>67</td>
-                            </tr>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>97</td>
-                            </tr>
-                        </table>
-                    </div>*@
+                    </tr>
+                    <tr>
+                        <td>Eve</td>
+                        <td>Jackson</td>
+                        <td>94</td>
+                    </tr>
+                    <tr>
+                        <td>Adam</td>
+                        <td>Johnson</td>
+                        <td>67</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>97</td>
+                    </tr>
+                </table>
+            </div>*@
 
                     <div id="b3" class="containerTab btn" style="display:none;background:rgb(243, 247, 247)">
 
@@ -123,30 +135,18 @@
                         </p>
                     </div>
                 </div>
+                <form action="/action_page.php" class="upload">
+                    <input type="file" id="myFile" name="filename" >
+                    <input type="submit" class="btn">
+                </form>
 
             </div>
 
         </article>
 
 
-        <nav>
-            <ul>
-                @*<li>Author : <a href="#"> John</a></li>*@
-                <li class="invisible">&times</li>
-                <li>Dificulty : <a href="#">@Model.Difficulty</a></li>
-                <li class="invisible">&times</li>
-                <li>Rating : <a href="#">@Model.Rating</a></li>
-            </ul>
-            <div class="PostCode">
-                <textarea class="Coding" placeholder="Write a code"></textarea>
-                <button class="commentBtn">Submit</button>
-            </div>
-        </nav>
+        
     </section>
-
-    <footer>
-        <p>Footer</p>
-    </footer>
     <script>
         function openTab(tabName) {
             var i, x;
@@ -166,6 +166,3 @@
             });
         }
     </script>
-</body>
-
-</html>

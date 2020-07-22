@@ -75,6 +75,120 @@ body {
     .topnav-right a:not(:first-child) {
         margin: 24px 10px;
     }
+.usernamespan {
+    float: left;
+    clear: both;
+    color: white;
+    margin: 30px 10px;
+    display: block;
+    font-weight: bold;
+    font-family: "Nunito_sans";
+}
+
+.star-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    top: 0px;
+    font-size: 1px !important;
+    margin-top: 2.5px;
+}
+@media screen and (max-width: 800px) {
+    .column {
+        float: none;
+        width: 100%;
+        display: block;
+    }
+
+    .topnav-left-right {
+        display: unset;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .dropdown-content {
+        top: 177px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .inside-column {
+        margin: 5px !important;
+    }
+
+    .middle-column {
+        height: unset !important;
+    }
+
+    .middle-row {
+        min-height: unset !important;
+        margin-bottom: 50px;
+    }
+
+    .Description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        font-size: 9px;
+    }
+
+    .cardFoot {
+    }
+
+        .cardFoot input {
+            font-size: 8px !important;
+        }
+
+    .categories {
+    }
+
+        .categories input {
+            width: 30%;
+        }
+
+    .categoryRow {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        float: left;
+        clear: both;
+        content: "";
+    }
+
+    .star-container {
+        display: none;
+    }
+
+    .cardFoot {
+        margin: 2px 10px !important;
+    }
+
+    .searchbtn {
+        display: none;
+    }
+
+    .search:focus {
+        width: 200px !important;
+    }
+
+    .myHover {
+        margin: 0px !important;
+    }
+
+    .inside-column {
+        overflow: hidden;
+    }
+
+    .middle-column:hover .inside-column {
+        box-shadow: 3px 3px 3px #707070;
+    }
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////*/
 
 .row {
     width: 100%;
@@ -101,10 +215,10 @@ body {
     color: white;
 }
 
-    .footer a {
-        color: #007bff;
-        text-decoration: none;
-    }
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
 
 .dropbtn {
     color: white;
@@ -140,20 +254,20 @@ body {
     margin-top:5px;
 }
 
-    .dropdown-content a {
-        color: #707070;
-        padding: 12px 16px;
-        text-decoration: none;
-        float: unset;
-        padding: unset;
-        display: block;
-        border-radius: unset;
-        border: none;
-        margin-top: 0px;
-        margin: 0 !important;
-        padding: 10px 10px;
-        text-align: center;
-    }
+.dropdown-content a {
+    color: #707070;
+    padding: 12px 16px;
+    text-decoration: none;
+    float: unset;
+    padding: unset;
+    display: block;
+    border-radius: unset;
+    border: none;
+    margin-top: 0px;
+    margin: 0 !important;
+    padding: 10px 10px;
+    text-align: center;
+}
 
         .dropdown-content a:hover {
             color: #007bff;
@@ -384,14 +498,7 @@ h1 {
     margin: 30px 15px;
 }
 
-.star-container {
-    position: relative;
-    text-align: center;
-    color: white;
-    top: 0px;
-    font-size: 1px !important;
-    margin-top: 2.5px;
-}
+
 
 .centered {
     position: absolute;
@@ -407,15 +514,6 @@ h1 {
     font-weight: bold;
 }
 
-.usernamespan {
-    float: left;
-    clear: both;
-    color: white;
-    margin: 30px 10px;
-    display: block;
-    font-weight: bold;
-    font-family: "Nunito_sans";
-}
 
 @media screen and (max-width: 800px) {
     .column {

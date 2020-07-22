@@ -8,27 +8,24 @@
 </head>
 <body>
     <div class="topnav row ">
-        <div class="column topnav-left">
-            <a  asp-controller="Home" asp-action="Index"><img src="~/images/owlicon.png" class="icon"></a>
-            <a  asp-controller="Catalog" asp-action="CatalogPage">Catalog</a>
-            <a asp-controller="Catalog" asp-action="PrivateProject">Private Projects</a>
-        </div>
-        <div class="column topnav-right">
-            <div class="dropdown">
-                <a class="dropbtn" onclick="myFunction()">
-                    <img src="~/images/social (4).png"
-                         class="profileIcon dropbtn">
-                </a>
-                <a href="#">7.6</a>
-                <div class="dropdown-content" id="myDropdown">
-                    <a  asp-controller="Home" asp-action="Index">User Profile</a>
-                    <a asp-controller="Account" asp-action="Signout">Log out</a>
-                </div>
+            <div class="column topnav-left">
+                <a  asp-controller="Home" asp-action="Index"><img src="~/images/owlicon.png" class="icon"></a>
+                <a  asp-controller="Catalog" asp-action="CatalogPage">Catalog</a>
+                <a asp-controller="Catalog" asp-action="PrivateProject">Private Projects</a>
             </div>
-            </a>
+            <div class="column topnav-right">
+                <a class="LogOut" href="#">Log Out</a>
+                
 
+            </div>
         </div>
-    </div>
+
+
+
+   
+
+
+
     @RenderBody()
 
     <div class="footer container">
@@ -47,7 +44,7 @@
     <script src="~/js/ProfilePageScript.js"></script>
     @if (IsSectionDefined("Scripts"))
     {
-        @RenderSection("Scripts", required: true)
+    @RenderSection("Scripts", required: true)
     }
 </body>
 
