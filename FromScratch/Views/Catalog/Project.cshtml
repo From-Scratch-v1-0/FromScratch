@@ -24,21 +24,21 @@
                     <ul>
                         @*<li>Author : <a href="#"> John</a></li>*@
                         <li class="invisible">&times</li>
-                        <li>Dificulty : <a href="#">@Model.Difficulty</a></li>
+                        <li>სირთულე : <a href="#">@Model.Difficulty</a></li>
                         <li class="invisible">&times</li>
-                        <li>Rating : <a href="#">@Model.Rating</a></li>
+                        <li>სარეიტინგო ქულა : <a href="#">@Model.Rating</a></li>
                     </ul>
                     @*<div class="PostCode">
                 <textarea class="Coding" placeholder="Write a code"></textarea>
                 <button class="commentBtn">Submit</button>
             </div>*@
                 </nav>
-                <h1>@Model.ProjectName</h1>
+                <h1>პროექტის სახელი:@Model.ProjectName</h1>
                 <div class="row">
                     <div id="myDIV">
                         <div class="column1 a1 btn active" onclick="openTab('b1');"
                              style="background:rgba(204, 204, 204, 0.200);">
-                            Project
+                            პროექტი
                         </div>
                         @*<div class="column a2 btn" onclick="openTab('b2');"
                      style="background:rgba(204, 204, 204, 0.200);">
@@ -56,7 +56,7 @@
                     <div id="b1" class="containerTab btn active" style="display:block;background:green">
 
                         @Model.Description
-
+                        <img src="~/images/Payrollproject.jpg" style="width:600px;height:auto" alt="Payroll System Project" />
                         @*<h3>Function prototype:</h3>
 
                 int solveMeFirst(int a, int b);
