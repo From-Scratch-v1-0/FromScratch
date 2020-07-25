@@ -79,7 +79,7 @@ namespace FromScratch.Controllers
                             BirthDate = new DateTime(1753, 1, 1),
                             Proffesion = "Unknown",
                             Education = "Unknown",
-                            AboutMe = "I Love Vodka..."
+                            AboutMe = "I am  ..."
                         };
 
                         operation.createPerson(person);
@@ -133,7 +133,7 @@ namespace FromScratch.Controllers
                         BirthDate = new DateTime(1753, 1, 1),
                         Proffesion = "Unknown",
                         Education = "Unknown",
-                        AboutMe = "I Love Vodka..."
+                        AboutMe = "I am ..."
                     };
 
                     operation.createPerson(person);
